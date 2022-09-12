@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+    File: index.html
+    Description: index.html is the home page
+    Authors: Nathan Cochran & Oren Kirchoff
+    Date: 2022-09-11
+-->
+
+<html lang="en">
+
+<!-- Head -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Welcome to Auctus!</title>
+    <link href="style.css" rel="stylesheet" />
+    <link href="Welcome/welcome.css" rel="stylesheet" />
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Scripts-->
+    <script src="tools.js" defer></script>
+</head>
+
+<!-- Body -->
+
+<body onclick="closeNavigation()">
+    <header>
+        <h1 class="websiteTitle">High Tech Times</h1>
+        <nav>
+            <div class="desktop">
+                <a href="index.html"><button>Home</button></a>
+                <a href="news.html"><button>News</button></a>
+                <a href="contact.html"><button>Contact Us</button></a>
+            </div>
+
+            <div class="mobile">
+                <a class="hamburger" href="javascript:void(0);" onclick="mobileNavigation()">
+                    <span class="material-icons">menu</span>
+                </a>
+                <div class="mobileLinks" style="display:none">
+                    <div class="flexCol">
+                        <a href="index.html"><button>Home</button></a>
+                        <a href="news.html"><button>News</button></a>
+                        <a href="contact.html"><button>Contact Us</button></a>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Title -->
+        <div class="pageNameSection">
+            <div class="pageNameBorderLeft"></div>
+            <h2 class="pageName">Home</h2>
+            <div class="pageNameBorderRight"></div>
+        </div>
+
+        <!-- Welcome -->
+        <div class="sectionContainer">
+            <h3 class="sectionTitle">Welcome</h3>
+            <p>Welcome to High Tech Times (HTT)! We are a team devoted to producing quality tech articles that keep you updated and tech savvy.
+                <br>We provide articles on trending/popular technology, cutting edge technology, and history of technology, as well as tech tutorials.
+                <br>You can find us on <a href="https://www.youtube.com/channel/UCCXGABBRW4WApi-F5tnv5Yg">YouTube</a> and <a href="https://discord.com/invite/cgbuSj4w">Discord</a> if you are interested in following us.
+            </p>
+        </div>
+
+        <!-- Top Stories Image List -->
+        <div class="imageList">
+            <h3 class="listTitle">Top Stories</h3>
+            <p class="listSubtitle">Scroll horizontally to see all the items.</p>
+            <div class="boxcontainer">
+                <a href="News/NASA.html">
+                    <div class="box">
+                        <img src="Media/NASA.jpg" alt="Image of NASA Spaceshuttle">
+                        <figcaption class="caption">NASA's exciting developments.</figcaption>
+                    </div>
+                </a>
+                <a href="News/PCTrends.html">
+                    <div class="box">
+                        <img src="Media/laptops.jpg" alt="Image of Laptops & Mobile Devices">
+                        <figcaption class="caption">Newest PC Trends</figcaption>
+                    </div>
+                </a>
+                <a href="News/ProgLanguages.html">
+                    <div class="box">
+                        <img src="Media/programming.jpeg" alt="Image of Person Programming">
+                        <figcaption class="caption">Trending Programming Languages</figcaption>
+                    </div>
+                </a>
+                <a href="News/GIT.html">
+                    <div class="box">
+                        <img src="Media/GITImage.jpg" alt="Image of GIT Software">
+                        <figcaption class="caption">GIT: The best software developer tool.</figcaption>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Our Team -->
+        <div class="sectionContainer">
+            <h3 class="sectionTitle">Our Team</h3>
+            <p>High Tech Times was launched Sunday, April 3rd, 2022. HTT was founded by Nathan Cochran and Maxwell Williams as a way to give great tech tips, strategies, news and trends, and more tech-related articles. Our goal is to provide articles that explain possibly complicated topics in an easy-to-read way.
+                <br>Click <a href="about.html">here</a> to learn more about our founders.<br>Interested in joining the team? <a href="contact.html">Get in touch!</a>
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logoContainer">
+            <img class="logoImage" src="HTTLogoDesigns.png">
+            <p>igh Tech Times</p>
+        </div>
+        <div>
+            <h6>Navigation</h6>
+            <p><a href="index.html">Home</a></p>
+            <p><a href="news.html">News</a></p>
+            <p><a href="contact.html">Contact Us</a></p>
+        </div>
+        <div>
+            <h6>About Us</h6>
+            <p><a href="about.html">Our Team</a></p>
+        </div>
+        <div>
+            <h6>Follow Us</h6>
+            <p><a href="https://www.youtube.com/channel/UCCXGABBRW4WApi-F5tnv5Yg" target="_blank">YouTube</a></p>
+            <p><a href="https://discord.gg/cgbuSj4w" target="_blank">Discord</a></p>
+        </div>
+        <div class="copyrightCol">
+            <p>&copy; 2022 High Tech Times</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
