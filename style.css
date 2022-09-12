@@ -172,21 +172,23 @@ nav .desktop a button:hover {
 /* Styling the Footer **/
 footer {
     background-color: rgb(121, 145, 148);
-    display: grid;
     margin: 0px;
     padding: 25px;
 }
-footer div {
+.footer-columns {
+    display: grid;
+}
+.footer-column {
     padding: 15px 15px 15px 25px;
 }
-footer div h6 {
+.footer-column h6 {
     font-size: 18px;
     margin: 5px 5px 5px 0px;
 }
-footer div p {
+.footer-column p {
     margin: 0px 0px 5px 0px;
 }
-footer div a {
+.footer-column a {
     color: black;
 }
 .logoContainer {
@@ -219,15 +221,12 @@ footer div a {
 ***********************************************/
 
 @media only screen and (max-width: 480px) {
-    footer { grid-template-columns: 1fr; }
+    .footer-columns { grid-template-columns: 1fr; }
     .copyrightCol { grid-column: 1/span 1; }
     .desktop { display: none; }
     .mobile { display: block; }
     .mobile .mobileLinks { width: 100vw; }
     .logoContainer p { display: none; }
-    .pageNameBorderLeft {flex-basis: 30%; flex-shrink: 1; flex-grow: 1; }
-    .pageNameBorderRight {flex-basis: 30%; flex-shrink: 1; flex-grow: 1; }
-    .pageName { font-size: 15px;  flex-basis: 250px; padding: 5px 10px 5px 10px;}
 }
 
 /*********************************************
@@ -235,26 +234,20 @@ footer div a {
 **********************************************/
 
 @media only screen and (min-width: 481px) {
-    footer { grid-template-columns: 1fr 1fr; }
+    .footer-columns { grid-template-columns: 1fr 1fr; }
     .copyrightCol { grid-column: 1/span 2; }
     .desktop { display: none; }
     .mobile { display: block; }
     .logoContainer p { display: none; }
-    .pageNameBorderLeft {flex-basis: 30%; flex-shrink: 1; flex-grow: 1; }
-    .pageNameBorderRight {flex-basis: 30%; flex-shrink: 1; flex-grow: 1; }
-    .pageName { font-size: 21px; flex-basis: 200px; padding: 5px 10px 5px 10px;}
 }
 
 /*********************************************
 * Desktop Styles: 769px and greater
 **********************************************/
 @media only screen and (min-width: 769px) {
-    footer { grid-template-columns: 2fr 1fr 1fr 1fr; }
+    .footer-columns { grid-template-columns: 2fr 1fr 1fr 1fr; }
     .copyrightCol { grid-column: 1/span 4; }
     .desktop { display: block; }
     .mobile { display: none; }
     .logoContainer p { display: block; }
-    .pageNameBorderLeft {flex-basis: 600px; flex-shrink: 2; flex-grow: 2;}
-    .pageNameBorderRight { flex-basis: 50px; flex-shrink: 1; flex-grow: 0.5; }
-    .pageName { font-size: calc(5px + 2vw); flex-basis: calc(100px + 20vw); padding: 5px 30px 5px 30px;}
 }
