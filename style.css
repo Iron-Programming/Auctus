@@ -19,12 +19,8 @@ body {
     margin: 0px;
     width: 100%;
     min-height: 100%;
-    background-image: url("Media/CloudBackgroundImage.jpg");
     display: flex;
     flex-direction: column;
-}
-header {
-    background-image: url("Media/CloudBackgroundImage.jpg");
 }
 main {
     flex-grow: 1;
@@ -32,13 +28,13 @@ main {
 
 /* Styling Fonts */
 h1, h2, h3 {
-    font-family: 'Sonsie One', cursive;
+    font-family: 'Courier New';
 }
 h4, h5, h6 {
-    font-family: 'Nova Flat', cursive;
+    font-family: Helvetica;
 }
 p, span, li {
-    font-family: 'Cagliostro', sans-serif;
+    font-family: Arial;
 }
 
 /* Styling Header */
@@ -46,132 +42,16 @@ header {
     margin: 0px 0px 50px 0px;
     padding: 10px;
     font-size: 5vw;
-    background-color: white;
+    background-color: rgb(197, 165, 113);
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
 }
 header > * {
     display: inline-block;
 }
-nav {
-    float: right;
-    margin-top: 1.25vw;
-    margin-right: 25px;
-}
-.websiteTitle {
-    font-size: 5.5vw;
-    margin: 1vw 0px 1vw 10px;
-    padding-left: 2%;
-    display: inline-block;
-}
-
-/* Desktop Navigation */
-nav .desktop a button {
-    width: 8vw;
-    height: 50px;
-    padding: 0px;
-    margin: 0px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0);
-    transition: background-color 0.3s ease-in-out;
-    font-size: 1.5vw;
-}
-nav .desktop a button:hover {
-    background-color: rgba(100, 100, 100, 0.2);
-    transition: background-color 0.3s ease-in-out;
-    cursor: pointer;
-}
-
-/* Mobile Navigation */
-@keyframes slideLeft {
-    0% {
-        right: -30vw;
-    }
-    100% {
-        right: 0px;
-    }
-}
-.addMobile {
-    animation: slideLeft 0.3s ease-in-out;
-    animation-fill-mode: forwards;
-    display: block !important;
-}
-.removeMobile {
-   display: none !important;
-}
-.mobile .mobileLinks {
-    display: block;
-    position: fixed;
-    right: 0px;
-    top: 0px;
-    width: 30vw;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-.mobile .mobileLinks .flexCol {
-    display: flex;
-    height: 70vh;
-    justify-content: space-around;
-    flex-direction: column;
-    margin-top: 15vh;
-}
-.mobile .mobileLinks a {
-    display: block;
-    text-decoration: none;
-}
-.mobile .mobileLinks a button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 25px;
-    margin: 25px auto 25px auto;
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
-    color: white;
-}
-.mobile .mobileLinks a button:hover {
-    color: rgb(80, 80, 80);
-    cursor: pointer;
-}
-.mobile .hamburger span {
-    font-size: 8vw;
-}
-
-/* Styling Page Title */
-.pageNameSection {
-    display: flex;
-    align-items: center;
-}
-.pageNameBorderLeft {
-    border-top: 7px solid rgb(23, 94, 175);
-    margin-left: 10px;
-
-    flex-basis: 600px;
-    flex-shrink: 2;
-    flex-grow: 2;
-}
-.pageName {
-    text-align: center;
-    box-sizing: border-box;
-    padding: 5px 50px 5px 47px;
-    margin: 0px 5px 0px 5px;
-    background-color: rgb(23, 94, 175);
-}
-.pageNameBorderRight {
-    border-top: 7px solid rgb(23, 94, 175);
-    margin-right: 10px;
-
-    flex-basis: 50px;
-    flex-shrink: 1;
-    flex-grow: 0.5;
-}
-.pageSection {
-    min-height: 200px;
-    width: 100%;
-}
 
 /* Styling the Footer **/
 footer {
-    background-color: rgb(121, 145, 148);
+    background-color: rgb(197, 165, 113);
     margin: 0px;
     padding: 25px;
 }
@@ -191,29 +71,17 @@ footer {
 .footer-column a {
     color: black;
 }
-.logoContainer {
-    padding: 0px;
-    height: 100%; 
-    display: flex; 
-    justify-content: center;
-    align-items: center; 
-}
-.logoContainer p {
-    font-size: 3vw;
-    margin: 0px 0px 0px 5px;
-    color: #652e11;
-    font-weight: bold;
-    
-}
-.logoImage {
+footer .logoImage {
     width: 125px;
     height: 125px;
 }
-.copyrightCol {
+header .logoImage {
+    width: 50px;
+    height: 50px;
+}
+.footer-separator {
     border-top: 2px solid black;
-    padding-top: 10px;
-    padding-bottom: 0px;
-    margin: 25px 0px 0px 0px;
+    margin: 25px 0px 25px 0px;
 }
 
 /**********************************************
@@ -222,11 +90,6 @@ footer {
 
 @media only screen and (max-width: 480px) {
     .footer-columns { grid-template-columns: 1fr; }
-    .copyrightCol { grid-column: 1/span 1; }
-    .desktop { display: none; }
-    .mobile { display: block; }
-    .mobile .mobileLinks { width: 100vw; }
-    .logoContainer p { display: none; }
 }
 
 /*********************************************
@@ -235,10 +98,6 @@ footer {
 
 @media only screen and (min-width: 481px) {
     .footer-columns { grid-template-columns: 1fr 1fr; }
-    .copyrightCol { grid-column: 1/span 2; }
-    .desktop { display: none; }
-    .mobile { display: block; }
-    .logoContainer p { display: none; }
 }
 
 /*********************************************
@@ -246,8 +105,4 @@ footer {
 **********************************************/
 @media only screen and (min-width: 769px) {
     .footer-columns { grid-template-columns: 2fr 1fr 1fr 1fr; }
-    .copyrightCol { grid-column: 1/span 4; }
-    .desktop { display: block; }
-    .mobile { display: none; }
-    .logoContainer p { display: block; }
 }
