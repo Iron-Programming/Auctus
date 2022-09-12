@@ -35,12 +35,12 @@ ul li {
     line-height: 40px;
     text-align: center;
     font-size: 20px;
-    background-color: #ac7339;
+    background-color: #996633;
 }
 
 ul li a {
     text-decoration: none;
-    color: white;
+    color: black;
     display: block;
 }
 
