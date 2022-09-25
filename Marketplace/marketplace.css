@@ -1,10 +1,10 @@
 @charset "utf-8";
 
 /*
-    File: welcome.class
-    Description: Styles the Welcome page (index.html)
+    File: marketplace.css
+    Description: Styles the Marketplace page (marketplace.html)
     Autors: Nathan Cochran & Oren Kirchoff
-    Date: 2022-09-11
+    Date: 2022-25-11
 */
 
 /*********************************************
@@ -14,31 +14,6 @@ body {
     background-color:  #CDF0EA;
 }
 
-body h1 {
-    text-align: center; 
-}
-
-.button-10 {
-    border-radius: 100px;
-
-    color: black;
-    cursor: pointer;
-    display: inline-block;
-    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-    padding: 7px 20px;
-    text-align: center;
-    text-decoration: none;
-    transition: all 250ms;
-    border: 0;
-    font-size: 16px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-}
-
-.button-10:focus {
-
-}
 
 
 /**********************************************
