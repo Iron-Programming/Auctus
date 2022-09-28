@@ -26,19 +26,25 @@ main {
 }
 /* Limit content width in containers */
 .header-content {
-    max-width: 2000px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
 .main-content {
-    max-width: 1500px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
 .footer-content {
-    max-width: 1500px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+}
+.mobile-version { 
+    display: block;
+}
+.desktop-version { 
+    display: none; 
 }
 
 /*********************************************
@@ -52,7 +58,7 @@ main {
     'opsz' 48
 }
 h1, h2, h3 {
-    font-family: 'Courier New';
+    font-family: 'Libre Baskerville', serif;
 }
 h4, h5, h6 {
     font-family: Helvetica;
@@ -62,10 +68,10 @@ p, span, li {
 }
 
 /*********************************************
-* Header
+* Header Layout
 *********************************************/
 header {
-    margin: 0px 0px 50px 0px;
+    margin: 0px 0px 0px 0px;
     background-color: rgb(197, 165, 113);
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -76,7 +82,14 @@ header .logoImage {
 }
 nav.left-main-menu {
     float: left;
-
+}
+.mobile-version .material-symbols-outlined {
+    font-size: 35px;
+    margin-top: 8px;
+}
+.mobile-version > * {
+    margin-left: -10px !important;
+    margin-right: -10px !important;
 }
 nav.right-main-menu {
     float: right;
@@ -130,9 +143,26 @@ header nav ul li ul li {
     margin-right: 7.5px;
 }
 
+/*********************************************
+* Main Layout
+*********************************************/
+main {
+    padding: 0px 0px 0px 0px;
+}
+.container-without-padding {
+    padding: 0px;
+}
+.container-with-padding {
+    padding: 0px 35px;
+}
+@media only screen and (max-width: 480px) {
+    main.container-with-padding {
+        padding: 0px 10px;
+    }
+}
 
 /*********************************************
-* Footer
+* Footer Layout
 *********************************************/
 footer {
     background-color: rgb(197, 165, 113);
@@ -198,4 +228,6 @@ footer .logoImage {
 **********************************************/
 @media only screen and (min-width: 769px) {
     .footer-columns { grid-template-columns: 1fr 1fr 1fr; }
+    .mobile-version { display: none; }
+    .desktop-version { display: block; }
 }

@@ -13,31 +13,36 @@
 body {
     background-color:  #CDF0EA;
 }
-
-body h1 {
-    text-align: center; 
+.ac-container-1 {
+    background-color: blue !important;
+    width: 100%;
 }
-
-.button-10 {
-    border-radius: 100px;
-
-    color: black;
-    cursor: pointer;
-    display: inline-block;
-    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-    padding: 7px 20px;
-    text-align: center;
+#welcome-slogan-container {
+    padding-top: 25px;
+}
+#welcome-slogan-container {
+    float: right;
+    background-color: red;
+}
+#welcome-slogan-container h1 {
+    font-size: clamp(65px, 15vw, 150px);
+    margin: 0px;
+    padding: 0px;
+    line-height: clamp(65px, 15vw, 150px);
+}
+#welcome-slogan-container p {
+    font-size: 20px;
+    margin-top: 0px;
+}
+#get-started-button {
+    background-color: rgb(197, 165, 113);
+    border-radius: 5px;
+    border: none;
+    height: 50px;
+}
+#get-started-button a {
     text-decoration: none;
-    transition: all 250ms;
-    border: 0;
-    font-size: 16px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-}
-
-.button-10:focus {
-
+    color: black;
 }
 
 
