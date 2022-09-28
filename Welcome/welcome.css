@@ -13,22 +13,10 @@
 body {
     background-color:  #CDF0EA;
 }
-.ac-container-1 {
-    background-color: blue !important;
-    width: 100%;
-}
-#welcome-slogan-container {
-    padding-top: 25px;
-}
-#welcome-slogan-container {
-    float: right;
-    background-color: red;
-}
 #welcome-slogan-container h1 {
-    font-size: clamp(65px, 15vw, 150px);
     margin: 0px;
     padding: 0px;
-    line-height: clamp(65px, 15vw, 150px);
+    font-size: 55px;
 }
 #welcome-slogan-container p {
     font-size: 20px;
@@ -39,32 +27,32 @@ body {
     border-radius: 5px;
     border: none;
     height: 50px;
+    padding: 15px;
 }
 #get-started-button a {
     text-decoration: none;
     color: black;
 }
+#slogan-image img {
+    width: 100%;
+}
+#welcome-title {
+    font-size: 100px;
+}
 
+/*********************************************
+* Tablet Styles: 481px to 768
+**********************************************/
+
+@media only screen and (max-width: 768px) {
+    #welcome-title { font-size: 75px; }
+    #welcome-slogan-container h1 { font-size: 25px; }
+    #welcome-slogan-container p { font-size: 16px; }
+}
 
 /**********************************************
 * Mobile Styles: 0 to 480px
 ***********************************************/
-
 @media only screen and (max-width: 480px) {
-
-}
-
-/*********************************************
-* Tablet Styles: 481px and greater
-**********************************************/
-
-@media only screen and (min-width: 481px) {
-
-}
-
-/*********************************************
-* Desktop Styles: 769px and greater
-**********************************************/
-@media only screen and (min-width: 769px) {
-
+    
 }
