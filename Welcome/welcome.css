@@ -10,9 +10,6 @@
 /*********************************************
 * Base CSS Styles
 *********************************************/
-body {
-    background-color:  #CDF0EA;
-}
 #welcome-slogan-container h1 {
     margin: 0px;
     padding: 0px;
@@ -38,6 +35,10 @@ body {
 }
 #welcome-title {
     font-size: 100px;
+}
+
+#w-main-2 {
+    background-image: linear-gradient(to bottom right, transparent 50%, #e7fffb 0);
 }
 
 /*********************************************
