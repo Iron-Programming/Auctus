@@ -93,11 +93,13 @@ h6 {
 * Header Layout
 *********************************************/
 header {
-    margin: 0px 0px 20px 0px;
     background-color: rgb(197, 165, 113);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
     padding: 25px;
     height: 75px;
+}
+header:last-of-type {
+    margin: 0px 0px 20px 0px;
 }
 header .logoImage {
     height: 50px;
@@ -196,6 +198,7 @@ main.container-with-padding {
         padding: 0px 10px;
     }
 }
+/* Styling hr tags : horizontal breaks */
 .hr-b1 {
     border: 2px solid black; 
     width: 30%; 
@@ -207,6 +210,11 @@ main.container-with-padding {
     margin: 75px auto;
     border-radius: 25px;
     box-shadow: 3px 3px 3px rgb(0, 0, 0, 0.5);
+}
+.hr-w1 {
+    border: none;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 /*********************************************
