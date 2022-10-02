@@ -73,26 +73,43 @@ body {
     }
 }
 
-
-/**********************************************
-* Mobile Styles: 0 to 480px
-***********************************************/
-
-@media only screen and (max-width: 480px) {
-
+#market-container {
+    box-shadow: 2px 2px 2px rgb(92, 67, 32);
 }
 
-/*********************************************
-* Tablet Styles: 481px and greater
-**********************************************/
-
-@media only screen and (min-width: 481px) {
-
+.market-item {
+    width: 200px;
 }
-
-/*********************************************
-* Desktop Styles: 769px and greater
-**********************************************/
-@media only screen and (min-width: 769px) {
-
+.market-item .desc-div {
+    background-color: rgb(208, 197, 183);
+    height: 150px;
+    padding: 5px 8px 0px 8px;
+    display: flex;
+    flex-direction: column;
+}
+.market-item .desc-div p {
+    flex-basis: 550px;
+    margin: 0px;
+}
+.market-item .location-text {
+    float: right;
+    pointer-events: all;
+}
+.market-item .location-text span.popup {
+    display: none;
+    pointer-events: none;
+}
+.market-item .location-text:hover span.popup {
+    display: relative;
+    cursor: pointer;
+}
+.market-item img {
+    width: 35px;
+    margin-top: 5px;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+.market-item img:hover {
+    cursor: pointer;
+    border: 2px solid rgb(0, 0, 0, 0.3);
 }
