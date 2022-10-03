@@ -238,7 +238,7 @@ footer {
 .footer-column p {
     margin: 0px 0px 5px 0px;
 }
-.footer-column a {
+.footer-column a, .footer-bottom a {
     color: black;
 }
 footer .logoImage {
