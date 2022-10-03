@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+/*
+    File: marketplace.css
+    Description: Styles the Marketplace page (marketplace.html)
+    Autors: Nathan Cochran & Oren Kirchoff
+    Date: 2022-25-11
+*/
+
+/*********************************************
+* Base CSS Styles
+*********************************************/
+body {
+    background-color:  rgb(255, 255, 255);
+}
+
+#search-bar {
+    background-color: white;
+    height: 50px;
+}
+
+#search-bar .search-container {
+    float: right;
+    border: 1px solid black;
+}
+
+#search-bar input[type=text] {
+    font-size: 25px;
+    height: 50px;
+    border: none;
+    box-shadow: 1px 1px 1px black;
+    padding-left: 15px;
+}
+
+#search-bar .search-container button {
+    float: right;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+}
+#search-bar .search-container button span {
+    font-size: 30px;
+}
+
+#search-bar .search-container button:hover {
+    background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+    #search-bar {
+        height: 165px;
+    }
+    #search-bar div > * {
+        float: none;
+    }
+    #search-bar .search-container {
+        float: none;
+        display: block;
+    }
+    #search-bar a, #search-bar input[type=text], #search-bar .search-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+    #search-bar input[type=text] {
+        width: calc(100% - 30px);
+    }
+    #search-bar input[type=text] {
+        border: 1px solid #ccc;  
+    }
+}
+
+#market-container {
+    box-shadow: 2px 2px 2px rgb(92, 67, 32);
+}
+
+.market-item {
+    width: 200px;
+}
+.market-item .desc-div {
+    background-color: rgb(208, 197, 183);
+    height: 150px;
+    padding: 5px 8px 0px 8px;
+    display: flex;
+    flex-direction: column;
+}
+.market-item .desc-div p {
+    flex-basis: 550px;
+    margin: 0px;
+}
+.market-item .location-text {
+    float: right;
+    pointer-events: all;
+}
+.market-item .location-text span.popup {
+    display: none;
+    pointer-events: none;
+}
+.market-item .location-text:hover span.popup {
+    display: relative;
+    cursor: pointer;
+}
+.market-item img {
+    width: 35px;
+    margin-top: 5px;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+.market-item img:hover {
+    cursor: pointer;
+    border: 2px solid rgb(0, 0, 0, 0.3);
+}

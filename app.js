@@ -4,9 +4,12 @@ const request = require("request");
 const bodyParser = require("body-parser");  // For parsing JSON data
 const https = require("https");             // For making https requests
 
+app.use(express.static("public"));          // We will need to create a "public" folder and place all of our css, js, and images
+                                            // into it so our server can pull our static resources from one place.
 
-
-
+app.get("/", function(req, res){            // get function that takes you to the home page
+  res.sendFile(__dirname + "/index.html");
+});
 
 
 
