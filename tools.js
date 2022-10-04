@@ -24,8 +24,6 @@ MarketItem.prototype.addToMarket = function() {
     var itemDiv = document.createElement("div");
     itemDiv.classList.add("market-item");
 
-
-
     var itemTitle = document.createElement("h5");
     itemTitle.textContent = this.name;
 
@@ -71,4 +69,16 @@ marketItems.push(new MarketItem({
 
 for (var i = 0; i < marketItems.length; i++) {
     marketItems[i].addToMarket();
+}
+
+/** Pretend Database **/
+var users = {
+    "205712@mail.macc.edu" : {
+        password : "password",
+
+    }
+};
+
+function resolveSignin() {
+    
 }

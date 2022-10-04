@@ -1,0 +1,23 @@
+h1.form-title {
+    text-align: center;
+    font-size: 60px;
+    margin: 25px;  
+}
+form {
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 25px;
+}
+form .form-group {
+    width: 100% !important;
+    margin: 30px 0px;
+}
+form label, form input[type="checkbox"] {
+    font-size: 20px;
+}
+form .form-check {
+    margin-left: 8px;
+}
+form input {
+    height: 50px;
+}

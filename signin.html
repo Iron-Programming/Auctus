@@ -54,8 +54,8 @@
 
       <!-- Page Title -->
       <div class="top-container">
-        <h1>Signin</h1>
-        <form>
+        <h1 class="form-title">Signin</h1>
+        <form id="#signin-form">
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -69,7 +69,7 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Remember Me</label>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button onclick="resolveSignin()" type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
 
