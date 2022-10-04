@@ -74,11 +74,13 @@ for (var i = 0; i < marketItems.length; i++) {
 /** Pretend Database **/
 var users = {
     "205712@mail.macc.edu" : {
-        password : "password",
+        password : "password"
 
     }
 };
 
+var testObject = {"test": 25};
+
 function resolveSignin() {
-    
+    alert(testObject["test"])
 }
