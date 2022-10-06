@@ -1,7 +1,7 @@
 h1.form-title {
     text-align: center;
     font-size: 60px;
-    margin: 25px;  
+    margin: 25px;
 }
 form {
     max-width: 600px;
@@ -20,4 +20,7 @@ form .form-check {
 }
 form input {
     height: 50px;
+}
+form #goToSignup {
+    margin-left: -30px !important;
 }
