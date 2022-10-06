@@ -25,6 +25,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
   <!-- Scripts-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="tools.js" defer></script>
 
   <!-- Bootstrap -->
@@ -58,12 +59,15 @@
           <form id="#signin-form">
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+              <small class="form-text error-message no-account">No account found</small>
+              <small class="form-text error-message no-match">Incorrect username or password</small>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
               <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+              <small class="form-text error-message no-match">Incorrect username or password</small>
             </div>
             <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -71,7 +75,7 @@
               <br>
               <small id="goToSignup" class="form-text text-muted">New here? <a href="signup.html">Signup!</a></small>
             </div>
-            <button onclick="resolveSignin()" type="submit" class="btn btn-primary">Submit</button>
+            <button onclick="resolveSignin()" type="reset" class="btn btn-primary">Submit</button>
           </form>
       </div>
 
