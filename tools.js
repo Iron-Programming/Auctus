@@ -8,11 +8,19 @@
     Date: 2022-09-11
 */
 
+
+
+/** Update HTML if user is logged in **/
+if (localStorage.loggedin) {
+    alert('User logged in')
+}
+
 /** Pretend Database **/
 var users = {
     "205712@mail.macc.edu" : {
-        password : "password"
-
+        password : "password",
+        displayName: "Nathan Cochran",
+        profilePicture: "ExampleUser/ProfilePic.png"
     }
 };
 
