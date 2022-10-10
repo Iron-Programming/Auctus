@@ -8,10 +8,10 @@
     Date: 2022-09-11
 */
 
-Cookies.set('cookie_name', 'cookie_value', { expires: 365 });
+/*Cookies.set('cookie_name', 'cookie_value', { expires: 365 });
 var cookieValue = Cookies.get('cookie_name'); // => 'value'
 alert(cookieValue);
-Cookies.remove('cookie_name');
+Cookies.remove('cookie_name');*/
 
 /** Pretend Database 
  * We will use access the real database once
@@ -49,6 +49,9 @@ function setCookie(cname, cvalue, exdays) {
     let expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
+
+  setCookie("testcookie", "testvalue", 25000);
+  document.cookie = "username=John Doe";
  
 /******************************************** 
  * Date Functions
@@ -68,7 +71,7 @@ function addHours(numOfHours, date) {
 /** Update HTML if user is logged in **/
 setCookie("uid", "test", 100000000);
 var userid = getCookie("uid");
-if (uid !== "") {
+if (userid !== "") {
     alert("User Logged in successfully!")
 }
 
