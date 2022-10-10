@@ -8,6 +8,15 @@ const mongoose = require("mongoose");       // Setting up Mongoose DB
 app.use(express.static("public"));          // Public folder that hold all of our static resources.  The server pulls from this.
 
 /////////////////////////////////////////////////////////////////////////////////////////
+
+//app.use("/", require("./routes.index"));
+
+const router = express.Router();
+//
+// router.get("/termsofuse", function(req, res){
+//   res.send("Terms of use page");
+// });
+/////////////////////////////////////////////////////////////////////////////////////////
                     ////// Database Setup(Mongoose) \\\\\\
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -40,6 +49,41 @@ mongoose.connect("mongodb://localhost:27017/todolistDB", {useNewUrlParser: true}
 app.get("/", function(req, res){            // get function that takes you to the home page
   res.sendFile(__dirname + "/index.html");
 });
+
+app.get("/signin", function(req, res){
+  res.sendFile(__dirname + "/signin.html");
+  // res.send("signin");
+});
+
+app.get("/signup", function(req, res){
+  res.sendFile(__dirname + "/signup.html");
+});
+
+app.get("/termsofuse", function(req, res){
+  res.sendFile(__dirname + "/termsofuse.html");
+});
+
+app.get("/privacypolicy", function(req, res){
+  res.sendFile(__dirname + "/privacypolicy.html");
+});
+
+app.get("/about", function(req, res){                 // CSS not loading
+  res.sendFile(__dirname + "/about.html");
+});
+
+app.get("/account", function(req, res){
+  res.sendFile(__dirname + "/account.html");
+});
+
+app.get("/marketplace", function(req, res){           // CSS not loading
+  res.sendFile(__dirname + "/marketplace.html");
+});
+
+app.get("/yourprofile", function(req, res){
+  res.sendFile(__dirname + "/yourprofile.html");
+});
+
+/////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
