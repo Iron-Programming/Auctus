@@ -151,14 +151,48 @@ header nav ul li a {
     color: rgb(92, 67, 32);
     transition: color 0.5s ease-in-out;
     display: block;
-    pointer-events: all;
 }
 header nav ul li button:hover {
     opacity: 0.6;
     cursor: pointer;
 }
-header nav ul li ul li {
+.sub-menu-items {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 3px black;
+    position: relative;
+    right: -8px;
+    top: -3px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 1px;
+    background-color: white;
+}
+.sub-menu-items li {
+    margin: 0px;
+}
+.top-bot {
+    position: absolute;
+    top: -30px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent black transparent; 
+}
+.addHeaderPopup {
+    display: block;
+}
+.removeHeaderPopup {
     display: none;
+}
+.top-bot-border {
+    top: -27px;
+    border-color: transparent transparent #fff transparent; 
+}
+.account-icon-container .account-item {
+    text-align: right;
 }
 .account-icon-container .material-symbols-outlined {
     font-size: 25px;

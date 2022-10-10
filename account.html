@@ -32,35 +32,75 @@
 <!-- Body -->
 
 <body>
+    <!-- Header Container -->
     <header>
-        <!--<h1 class="websiteTitle">Auctus</h1>-->
-        <img class="logoImage" src="Media/Logo.png">
 
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a>
-                  <ul>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Clients</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Legacy</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Contacts</a>
-                  <ul>
-                    <li><a href="#">Email</a></li>
-                    <li><a href="#">Phone</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">News</a></li>
-              </ul>
-        </nav>
+        <!-- Header Content -->
+        <div class="header-content mobile-version">
+            <nav class="left-main-menu main-menu">
+                <ul>
+                    <li><a href="index.html"><button><img class="logoImage" src="Media/Logo.png"></button></a></li>
+                    <li><a href="marketplace.html"><span class="material-symbols-outlined">storefront</span></a></li>
+                    <li><a href="documentation.html"><button><span class="material-symbols-outlined">contact_support</span></button></a></li>
+                </ul>
+            </nav>
+            <nav class="right-main-menu main-menu">
+                <ul class="logged-in">
+                    <li class="account-icon-container">
+                        <a onclick="handleHeaderPopup()" href="#" class="account-item"><span class="display-name">Error_Name</span><span class="material-symbols-outlined">account_circle</span></a>
+                        <div class="headerPopup">
+                            <ul class="sub-menu-items">
+                                <span class="top-bot"></span>
+                                <span class="top-bot top-bot-border"></span>
+                                <li><a href="dashboard.html">Dashboard</a></li>
+                                <li><a href="publicprofile.html">Public Profile</a></li>
+                                <li><a href="community.html">Community</a></li>
+                                <li><a href="news.html">News</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="logged-out">
+                    <li><a href="signin.html"><button>Sign In</button></a></li>
+                    <li><a href="signup.html"><button class="get-started">Get Started</button></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-content desktop-version">
+            <nav class="left-main-menu main-menu">
+                <ul>
+                    <li><a href="index.html"><button><img class="logoImage" src="Media/Logo.png"></button></a></li>
+                    <li><a href="marketplace.html"><button>Marketplace</button></a></li>
+                    <li><a href="documentation.html"><button>Documentation</button></a></li>
+                </ul>
+            </nav>
+            <nav class="right-main-menu main-menu">
+                <ul class="logged-in">
+                    <li class="account-icon-container">
+                        <a onclick="handleHeaderPopup()" href="#" class="account-item"><span class="display-name">Error_Name</span><span class="material-symbols-outlined">account_circle</span></a>
+                        <div class="headerPopup">
+                            <ul class="sub-menu-items">
+                                <span class="top-bot"></span>
+                                <span class="top-bot top-bot-border"></span>
+                                <li><a href="dashboard.html">Dashboard</a></li>
+                                <li><a href="publicprofile.html">Public Profile</a></li>
+                                <li><a href="community.html">Community</a></li>
+                                <li><a href="news.html">News</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="logged-out">
+                    <li><a href="signin.html"><button>Sign In</a></button></a></li>
+                    <li><a href="signup.html"><button class="get-started">Get Started</button></a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-
+    
     <!-- Main Content -->
     <main>
         <!-- Page Title -->
@@ -73,18 +113,21 @@
 
     </main>
 
-    <!-- Footer -->
+    <!-- Footer Container -->
     <footer>
+
+        <!-- Footer Content -->
+
         <!-- (Upper Section): Footer Columns -->
-        <div class="footer-columns">
+        <div class="footer-columns footer-content">
             <div class="footer-column">
                 <img class="logoImage" src="Media/Logo.png">
             </div>
             <div class="footer-column">
                 <h6>Navigation</h6>
-                <p><a href="welcome.html">Welcome</a></p>
+                <p><a href="yourprofile.html">Your Profile</a></p>
                 <p><a href="marketplace.html">Marketplace</a></p>
-                <p><a href="help.html">Help</a></p>
+                <p><a href="documentation.html">Documentation</a></p>
             </div>
             <div class="footer-column">
                 <h6>Follow Us</h6>
@@ -96,10 +139,11 @@
 
         <div class="footer-separator"></div>
 
-        <!-- (Lower Section): Footer Info -->
-        <div class="footer-bottom">
-            <p>&copy; 2022 Auctus</p>
+        <!-- (Socket): Footer Info -->
+        <div class="footer-bottom footer-content">
+            <p>&copy; 2022 Auctus | <a href="termsofuse.html">Terms Of Use</a> | <a href="privacypolicy.html">Privacy Policy</a></p>
         </div>
+
     </footer>
 
 </body>

@@ -8,11 +8,6 @@
     Date: 2022-09-11
 */
 
-/*Cookies.set('cookie_name', 'cookie_value', { expires: 365 });
-var cookieValue = Cookies.get('cookie_name'); // => 'value'
-alert(cookieValue);
-Cookies.remove('cookie_name');*/
-
 /** Pretend Database 
  * We will use access the real database once
  * that is created.
@@ -20,38 +15,31 @@ Cookies.remove('cookie_name');*/
 var users = {
     "205712@mail.macc.edu" : {
         password : "password",
-        displayName: "Nathan Cochran",
+        displayName: "Nathan",
         profilePicture: "ExampleUser/ProfilePic.png"
     }
 };
 
-/******************************************** 
- * Cookie Functions (Credit to w3schools)
-*********************************************/
-function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  }
-function setCookie(cname, cvalue, exdays) {
-    const d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    let expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-  }
+var loggedin = false,
+    user = users["205712@mail.macc.edu"];
 
-  setCookie("testcookie", "testvalue", 25000);
-  document.cookie = "username=John Doe";
+// manage logged in users
+if (loggedin) {
+    var elements = document.getElementsByClassName("logged-out");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = "none";
+    }
+
+    var accountName = document.querySelectorAll("header .display-name");
+    for (var i = 0; i < accountName.length; i++) {
+        accountName[i].textContent = user.displayName;
+    }
+} else {
+    var elements = document.getElementsByClassName("logged-in");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = "none";
+    }
+}
  
 /******************************************** 
  * Date Functions
@@ -64,16 +52,40 @@ function addHours(numOfHours, date) {
 }
 
 /******************************************** 
- * Mangage cookies
- * Provides login functionality
+ * @functionhandleHeaderPopup handles the header popup when you click on your account name
+ * @function clearHeaderPopup clears the popup when you click somewhere in the body
 *********************************************/
-
-/** Update HTML if user is logged in **/
-setCookie("uid", "test", 100000000);
-var userid = getCookie("uid");
-if (userid !== "") {
-    alert("User Logged in successfully!")
+function handleHeaderPopup() {
+    var popup = document.getElementsByClassName("headerPopup");
+    setTimeout(function() {
+        for (var i = 0; i < popup.length; i++) {
+            if (popup[i].classList.contains("addHeaderPopup")) {
+                popup[i].classList.add("removeHeaderPopup");
+                popup[i].classList.remove("addHeaderPopup");
+            } else {
+                popup[i].classList.remove("removeHeaderPopup");
+                popup[i].classList.add("addHeaderPopup");
+            }
+        } 
+    }, 25);
 }
+
+function clearHeaderPopup() {
+    var popup = document.getElementsByClassName("headerPopup");
+    for (var i = 0; i < popup.length; i++) {
+        popup[i].classList.add("removeHeaderPopup");
+        popup[i].classList.remove("addHeaderPopup");
+    }
+}
+clearHeaderPopup();
+
+// clear header when clicking anywhere else
+const box = document.querySelector(".account-icon-container")
+document.addEventListener("click", function(event) {
+  if (event.target.closest(".account-icon-container")) { return }
+  clearHeaderPopup();
+})
+
 
 /** 
  * function resolveSignin()
@@ -103,7 +115,7 @@ function resolveSignin() {
     var messages = document.getElementsByClassName('no-account');
     messages[0].style.display = "none";
     if (found && match) {
-        setCookie("uid", username, 1);
+        alert("login successful")
         window.location.href = "yourprofile.html";
     
     // #2 --> username found but password does not match
