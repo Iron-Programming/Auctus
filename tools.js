@@ -20,7 +20,7 @@ var users = {
     }
 };
 
-var loggedin = false,
+var loggedin = true,
     user = users["205712@mail.macc.edu"];
 
 // manage logged in users
