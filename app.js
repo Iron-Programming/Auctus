@@ -20,28 +20,51 @@ const router = express.Router();
                     ////// Database Setup(Mongoose) \\\\\\
 /////////////////////////////////////////////////////////////////////////////////////////
 
-mongoose.connect("mongodb://localhost:27017/todolistDB", {useNewUrlParser: true});        // Connecting the database(localhost for now)
+ // mongoose.connect("mongodb+srv://admin-oren:Hoolibah88@cluster0.9ryp70x.mongodb.net/?retryWrites=true&w=majority", {      // Connecting the database mongoose
+ //   useNewUrlParser: true
+ // });
 
-// const auctusSchema = {               // Creating the Schema
+mongoose.connect("mongodb://localhost:27017/Logins", {
+  useNewUrlParser: true
+});
+
+// const TestSchema = {               // Creating the Schema
 //   name: String
 // };
-//
-// const Item = mongoose.model("Item", itemsSchema);     // Creating the model
-//
-// const item1 = new Item ({                             // Creating documents
-//   name: "Bob"
-// });
-//
-//
-// const defaultItems = [item1, item2, item3];
-//
-// Item.insertMany(defaultItems, function(err){
-//   if (err){
-//     console.log(err);
-//   } else {
-//     console.log("Successfully added documents to database!");
-//   }
-// });
+
+// const Item = mongoose.model("Item", TestSchema);     // Creating the model
+
+const Schema = mongoose.Schema;
+
+const SomeModelSchema = new Schema({
+  a_string: String
+});
+
+// Compile model from schema
+const SomeModel = mongoose.model("SomeModel", SomeModelSchema);
+
+const item1 = new SomeModel ({                             // Creating documents
+  name: "This is a string!"
+});
+
+const item2 = new SomeModel ({
+  name: "Another string"
+});
+
+const item3 = new SomeModel ({
+  name: "And another"
+});
+
+
+const defaultItems = [item1, item2, item3];
+
+SomeModel.insertMany(defaultItems, function(err){
+  if (err){
+    console.log(err);
+  } else {
+    console.log("Successfully added documents to database!");
+  }
+});
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
