@@ -67,8 +67,8 @@ app.get("/privacypolicy", function(req, res){
   res.sendFile(__dirname + "/privacypolicy.html");
 });
 
-app.get("/about", function(req, res){                 // CSS not loading
-  res.sendFile(__dirname + "/about.html");
+app.get("/documentation", function(req, res){                 // CSS not loading
+  res.sendFile(__dirname + "/documentation.html");
 });
 
 app.get("/account", function(req, res){
@@ -82,6 +82,14 @@ app.get("/marketplace", function(req, res){           // CSS not loading
 app.get("/yourprofile", function(req, res){
   res.sendFile(__dirname + "/yourprofile.html");
 });
+
+app.get("/dashboard", function(req, res){
+  res.sendFile(__dirname + "/dashboard.html");
+});
+
+// app.get("/yourprofile", function(req, res){
+//   res.sendFile(__dirname + "/yourprofile.html");
+// });
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
