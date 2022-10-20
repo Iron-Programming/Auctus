@@ -4,6 +4,7 @@ const request = require("request");
 const bodyParser = require("body-parser"); // For parsing JSON data
 const https = require("https"); // For making https requests
 const mongoose = require("mongoose"); // Setting up Mongoose DB
+var mongo = require('mongodb');
 
 app.use(express.static("public")); // Public folder that hold all of our static resources.  The server pulls from this.
 
