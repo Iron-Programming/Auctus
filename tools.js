@@ -20,7 +20,7 @@ var users = {
     }
 };
 
-var loggedin = true,
+var loggedin = false,
     user = users["205712@mail.macc.edu"];
 
 // manage logged in users
@@ -131,4 +131,12 @@ function resolveSignin() {
         messages[0].style.display = "block";
         messages[0].style.animation = "shake 0.5s";
     }
+}
+
+/** 
+ * function resolveSignup()
+ * 
+*/
+function resolvesSignup() {
+    
 }
