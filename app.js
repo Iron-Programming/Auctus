@@ -4,9 +4,12 @@ const request = require("request");
 const bodyParser = require("body-parser"); // For parsing JSON data
 const https = require("https"); // For making https requests
 const mongoose = require("mongoose"); // Setting up Mongoose DB
-var mongo = require('mongodb');
+
 
 app.use(express.static("public")); // Public folder that hold all of our static resources.  The server pulls from this.
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -25,40 +28,45 @@ const router = express.Router();
 //   useNewUrlParser: true
 // });
 
-mongoose.connect("mongodb://localhost:27017/Logins", {
-  useNewUrlParser: true
-});
+mongoose.connect("mongodb://localhost:27017/AuctusLoginDB", {useNewUrlParser: true});    // Making connection with Mongo and creating the database
 
-const namesSchema = { // Creating the Schema
-  name: String
+const userSchema = { // Creating the Schema(collection or table)
+  email: String,
+  password: String
 };
 
-const Item = mongoose.model("Item", namesSchema); // Creating the model
-
-const item1 = new Item({ // Creating documents
-  name: "Billy"
-});
-
-const item2 = new Item({
-  name: "Bobby"
-});
-
-const item3 = new Item({
-  name: "Jimmy"
-});
+const User = new mongoose.model("User", userSchema); // Creating new schema for database
 
 
-const defaultItems = [item1, item2, item3];
-
-Item.insertMany(defaultItems, function(err) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("Successfully added documents to database!");
-  }
-});
 
 
+
+// const item1 = new Item({ // Creating documents
+//   name: "Billy"
+// });
+//
+// const item2 = new Item({
+//   name: "Bobby"
+// });
+//
+// const item3 = new Item({
+//   name: "Jimmy"
+// });
+
+
+// const defaultItems = [item1, item2, item3];
+//
+// Item.insertMany(defaultItems, function(err) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("Successfully added documents to database!");
+//   }
+// });
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+              ///////// GET requests \\\\\\\\\\\
 /////////////////////////////////////////////////////////////////////////////////////////
 
 app.get("/", function(req, res) { // get function that takes you to the home page
@@ -102,14 +110,50 @@ app.get("/dashboard", function(req, res) {
   res.sendFile(__dirname + "/dashboard.html");
 });
 
-// app.get("/yourprofile", function(req, res){
-//   res.sendFile(__dirname + "/yourprofile.html");
-// });
+app.get("/secrets", function(req, res){
+  res.sendFile(__dirname + "/secrets.html");
+});
+
+/////////////////////////////////////////////////////////////////////////////////////////
+                ////////// POST functions \\\\\\\\\\\
+/////////////////////////////////////////////////////////////////////////////////////////
+
+app.post("/signup", function(req, res){
+  const newUser = new User({
+    email: req.body.email,
+    password: req.body.password
+  });
+
+  newUser.save(function(err){
+    if (err){
+      console.log(err);
+    } else {
+      res.sendFile(__dirname + "/secrets.html");
+    }
+  });
+});
+
+app.post("/signin", function(req, res){
+  const email = req.body.email;
+  const password = req.body.password;
+
+  User.findOne({email:email}, function(err, foundUser){
+    if (err){
+      console.log(err);
+    } else {
+      if (foundUser) {
+        if (foundUser.password === password){
+          res.sendFile(__dirname + "/secrets.html");
+        }
+      }
+    }
+  });
+});
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
-app.listen(process.env.PORT || 3000, function() {
+app.listen(process.env.PORT || 3333, function() {
   console.log("The server is up and running on localhost:3000 and is also set up for heroku"); // Server function
 });
