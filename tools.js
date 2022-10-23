@@ -20,7 +20,7 @@ var users = {
     }
 };
 
-var loggedin = false,
+var loggedin = true,
     user = users["205712@mail.macc.edu"];
 
 // manage logged in users
@@ -56,25 +56,35 @@ function addHours(numOfHours, date) {
  * @function clearHeaderPopup clears the popup when you click somewhere in the body
 *********************************************/
 function handleHeaderPopup() {
-    var popup = document.getElementsByClassName("headerPopup");
+    var popup = document.getElementsByClassName("headerPopup"),
+        notifs = document.getElementsByClassName("notification-container");
+    
     setTimeout(function() {
         for (var i = 0; i < popup.length; i++) {
             if (popup[i].classList.contains("addHeaderPopup")) {
                 popup[i].classList.add("removeHeaderPopup");
                 popup[i].classList.remove("addHeaderPopup");
+                notifs[i].classList.add("notif-off");
+                notifs[i].classList.remove("notif-on");
             } else {
                 popup[i].classList.remove("removeHeaderPopup");
                 popup[i].classList.add("addHeaderPopup");
+                notifs[i].classList.remove("notif-off");
+                notifs[i].classList.add("notif-on");
             }
         } 
     }, 25);
 }
 
 function clearHeaderPopup() {
-    var popup = document.getElementsByClassName("headerPopup");
+    var popup = document.getElementsByClassName("headerPopup"),
+        notifs = document.getElementsByClassName("notification-container");
+    
     for (var i = 0; i < popup.length; i++) {
         popup[i].classList.add("removeHeaderPopup");
         popup[i].classList.remove("addHeaderPopup");
+        notifs[i].classList.add("notif-off");
+        notifs[i].classList.remove("notif-on");
     }
 }
 clearHeaderPopup();
@@ -115,8 +125,8 @@ function resolveSignin() {
     var messages = document.getElementsByClassName('no-account');
     messages[0].style.display = "none";
     if (found && match) {
-        alert("login successful")
-        window.location.href = "yourprofile.html";
+        alert("login successful");
+        window.location.href = "profile.html";
     
     // #2 --> username found but password does not match
     } else if (found) {
@@ -138,5 +148,13 @@ function resolveSignin() {
  * 
 */
 function resolvesSignup() {
+    
+}
+
+/** 
+ * function resolveSigout()
+ * 
+*/
+function resolvesSignout() {
     
 }
