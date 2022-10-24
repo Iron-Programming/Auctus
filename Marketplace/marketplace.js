@@ -26,17 +26,16 @@ MarketItem.prototype.addToMarket = function() {
     var bottomDiv = document.createElement("div");
     bottomDiv.classList.add("bottom-div");
 
-    var locationText = document.createElement("div");
-    locationText.innerHTML = "<span class='material-symbols-outlined'>location_on</span>";
-    locationText.classList.add("location-text");
-    locationText.innerHTML += "<span class='popup'>MO, Example</span>";
+    var goArrow = document.createElement("div");
+    goArrow.innerHTML = "<span class='material-symbols-outlined'>outbound</span>";
+    goArrow.classList.add("go-arrow");
 
     var authorImg = document.createElement("a");
     authorImg.innerHTML = "<img class='item-author-image' src='Media/example_image.png'>";
     authorImg.href = "";
 
     // add child elements into itemDiv
-    bottomDiv.appendChild(locationText);
+    bottomDiv.appendChild(goArrow);
     bottomDiv.appendChild(authorImg);
     descDiv.appendChild(itemDesc);
     descDiv.appendChild(bottomDiv);

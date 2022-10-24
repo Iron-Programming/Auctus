@@ -73,10 +73,6 @@ body {
     }
 }
 
-#market-container {
-    background-color: blue;
-}
-
 .market-item {
     width: 200px;
 }
@@ -119,14 +115,48 @@ body {
 .market-item .desc-div p {
     flex-basis: 550px;
     margin: 0px;
-    color: rgb(255, 255, 255, 0);
-}
-.market-item .desc-div:hover p {
-    color: rgb(255, 255, 255, 0.9);
-    transition: color 0.1s ease-in-out;
+    color: rgb(255, 255, 255);
 }
 .market-item .desc-div:hover {
     animation: addOverlay 0.1s ease-in-out;
     animation-fill-mode: forwards;
     cursor: pointer;
+}
+
+.market-item .go-arrow {
+    float: right;
+    pointer-events: all;
+    color: white;
+}
+.market-item .go-arrow span {
+    font-size: 40px;
+    position: relative;
+    left: -2.5px;
+    top: 2.5px;
+}
+.market-item img {
+    position: relative;
+    top: 7.5px;
+    left: 5px;
+    width: 35px;
+    margin-top: 5px;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+.market-item img:hover {
+    cursor: pointer;
+    border: 2px solid rgb(0, 0, 0, 0.3);
+}
+
+.market-item .desc-div:hover p, .market-item .desc-div:hover img, .market-item .desc-div:hover .go-arrow {
+    opacity: 0.9;
+    transition: opacity 0.1s ease-in-out;
+}
+.market-item .desc-div:active p, .market-item .desc-div:active img, .market-item .desc-div:active .go-arrow {
+    opacity: 0.9;
+    transition: opacity 0.1s ease-in-out;
+}
+.market-item .desc-div p, .market-item .desc-div img, .market-item .desc-div .go-arrow {
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
 }
