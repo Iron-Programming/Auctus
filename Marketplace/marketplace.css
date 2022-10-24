@@ -86,6 +86,9 @@ body {
     flex-grow: 3;
     flex-shrink: 3;
 }
+.suggested-items .market-item {
+    margin-right: 25px;
+}
 .suggested-items #market-container-suggested {
     display: flex;
     flex-direction: row;
@@ -111,99 +114,4 @@ body {
     width: 80%;
     color: rgb(109, 25, 25, 0.5);
     font-style: italic; /** ??? Replace with italized font **/
-}
-
-/*********************************************
-* Market Items
-*********************************************/
-.market-item {
-    width: 200px;
-    margin-bottom: 25px;
-}
-.suggested-items .market-item {
-    margin-right: 25px;
-}
-@keyframes addOverlay {
-    0% { 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
-                      url("../ExampleUser/soap.jpg");
-     }
-     20% { 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
-                      url("../ExampleUser/soap.jpg");
-     }
-     40% { 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-                      url("../ExampleUser/soap.jpg");
-     }
-     60% { 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                      url("../ExampleUser/soap.jpg");
-     }
-     80% { 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                      url("../ExampleUser/soap.jpg");
-     }
-     100% { 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url("../ExampleUser/soap.jpg");
-     }
-}
-.market-item .desc-div {
-    background-image: url("../ExampleUser/soap.jpg");
-    background-size: cover;
-    height: 184px;
-    width: 190px;
-    padding: 5px 8px 0px 8px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 2px 2px 2px rgb(92, 67, 32);
-}
-.market-item .desc-div p {
-    flex-basis: 550px;
-    margin: 0px;
-    color: rgb(255, 255, 255);
-}
-.market-item .desc-div:hover {
-    animation: addOverlay 0.1s ease-in-out;
-    animation-fill-mode: forwards;
-    cursor: pointer;
-}
-
-.market-item .go-arrow {
-    float: right;
-    pointer-events: all;
-    color: white;
-}
-.market-item .go-arrow span {
-    font-size: 40px;
-    position: relative;
-    left: -2.5px;
-    top: 2.5px;
-}
-.market-item img {
-    position: relative;
-    top: 7.5px;
-    left: 5px;
-    width: 35px;
-    margin-top: 5px;
-    border: 2px solid black;
-    border-radius: 25px;
-}
-.market-item img:hover {
-    cursor: pointer;
-    border: 2px solid rgb(0, 0, 0, 0.3);
-}
-
-.market-item .desc-div:hover p, .market-item .desc-div:hover img, .market-item .desc-div:hover .go-arrow {
-    opacity: 0.9;
-    transition: opacity 0.1s ease-in-out;
-}
-.market-item .desc-div:active p, .market-item .desc-div:active img, .market-item .desc-div:active .go-arrow {
-    opacity: 0.9;
-    transition: opacity 0.1s ease-in-out;
-}
-.market-item .desc-div p, .market-item .desc-div img, .market-item .desc-div .go-arrow {
-    opacity: 0;
-    transition: opacity 0.1s ease-in-out;
 }

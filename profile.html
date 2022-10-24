@@ -30,6 +30,7 @@
     <!-- Scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="tools.js" defer></script>
+    <script src="Profile/profile.js" defer></script>
 </head>
 
 <!-- Body -->
@@ -119,9 +120,36 @@
 
         <!-- Main Containt -->
         <div class="main-content">
-            <h1>Your Profile</h1>
-            <p>Example Profile Information</p>
-            <p>Display Name: <span class="display-name">Error_Name</span></p>
+
+            <!-- User Overview -->
+            <div class="row-user-overview">
+                <img src="ExampleUser/CowboyCircle.png">
+                <div class="same-line">
+                    <h3 class="display-name">Display Name</h3>
+                    <p class="username">@username</p>
+                    <!-- following-user -->
+                    <p class="followers-line"><span class="follower-num">???</span> followers <button class="follow-button">Follow</button></p>
+                </div>
+                
+                <div class="hr-b2"></div>
+                
+                <div class="bio">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                        molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+                        numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+                        optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+                        obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+                        nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+                        tenetur error, harum nesciunt ipsum debitis quas aliquid.</p>
+                </div>
+            </div>
+
+            <!-- Designs -->
+            <div class="user-designs-container">
+                <h3 class="designs">Designs</h3>
+                <hr class="hr-b2" />
+                <div id="user-designs"></div>
+            </div>
         </div>
     </main>
 
