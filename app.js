@@ -4,6 +4,7 @@ const request = require("request");
 const bodyParser = require("body-parser"); // For parsing JSON data
 const https = require("https"); // For making https requests
 const mongoose = require("mongoose"); // Setting up Mongoose DB
+const encrypt = require("mongoose-encryption");  // Setting up database encryption
 
 
 app.use(express.static("public")); // Public folder that hold all of our static resources.  The server pulls from this.
@@ -30,10 +31,13 @@ const router = express.Router();
 
 mongoose.connect("mongodb://localhost:27017/AuctusLoginDB", {useNewUrlParser: true});    // Making connection with Mongo and creating the database
 
-const userSchema = { // Creating the Schema(collection or table)
+const userSchema = new mongoose.Schema ({ // Creating the Schema(collection or table)
   email: String,
   password: String
-};
+});
+
+const secret = "Thisisourlittlesecret";
+userSchema.plugin(encrypt, {secret: secret, encryptedFields: ["password"] });
 
 const User = new mongoose.model("User", userSchema); // Creating new schema for database
 
@@ -110,9 +114,9 @@ app.get("/dashboard", function(req, res) {
   res.sendFile(__dirname + "/dashboard.html");
 });
 
-app.get("/secrets", function(req, res){
-  res.sendFile(__dirname + "/secrets.html");
-});
+// app.get("/secrets", function(req, res){
+//   res.sendFile(__dirname + "/secrets.html");
+// });
 
 /////////////////////////////////////////////////////////////////////////////////////////
                 ////////// POST functions \\\\\\\\\\\
@@ -151,7 +155,7 @@ app.post("/signin", function(req, res){
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////
-
+              ///////// Server code \\\\\\\\\\
 /////////////////////////////////////////////////////////////////////////////////////////
 
 app.listen(process.env.PORT || 3333, function() {
