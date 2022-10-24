@@ -14,16 +14,17 @@ body {
     background-color:  rgb(255, 255, 255);
 }
 
+/********************************************* 
+* Market Search Bar 
+*********************************************/
 #search-bar {
     background-color: white;
     height: 50px;
 }
-
 #search-bar .search-container {
     float: right;
     border: 1px solid black;
 }
-
 #search-bar input[type=text] {
     font-size: 25px;
     height: 50px;
@@ -31,7 +32,6 @@ body {
     box-shadow: 1px 1px 1px black;
     padding-left: 15px;
 }
-
 #search-bar .search-container button {
     float: right;
     background: #ddd;
@@ -45,7 +45,6 @@ body {
 #search-bar .search-container button:hover {
     background: #ccc;
 }
-
 @media screen and (max-width: 600px) {
     #search-bar {
         height: 165px;
@@ -73,8 +72,56 @@ body {
     }
 }
 
+/*********************************************
+* Market Containers
+*********************************************/
+#market {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap; 
+}
+.suggested-items {
+    flex-basis: 300px;
+    min-width: 225px;
+    flex-grow: 3;
+    flex-shrink: 3;
+}
+.suggested-items #market-container-suggested {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;  
+    padding-right: 25px;
+    justify-content: space-around;
+}
+.trending-items {
+    background-color: rgb(203, 189, 157);
+    flex-basis: 150px;
+    min-width: 300px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.trending-items h3 {
+    margin: 15px 0px 0px 0px;
+}
+.trending-items .subtitle {
+    text-align: center;
+    width: 80%;
+    color: rgb(109, 25, 25, 0.5);
+    font-style: italic; /** ??? Replace with italized font **/
+}
+
+/*********************************************
+* Market Items
+*********************************************/
 .market-item {
     width: 200px;
+    margin-bottom: 25px;
+}
+.suggested-items .market-item {
+    margin-right: 25px;
 }
 @keyframes addOverlay {
     0% { 

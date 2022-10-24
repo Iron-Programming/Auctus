@@ -238,6 +238,7 @@ main {
 }
 .row {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
@@ -266,9 +267,15 @@ main.container-with-padding {
     width: 30%; 
     margin: 5px auto;
 }
+.hr-b2 {
+    border: 2px solid black;
+    width: calc(100% - 20px); 
+    margin: 5px 5px;
+    margin-bottom: 20px;
+}
 .hr-p1 {
-    border: 5px solid black; 
-    width: 80%; 
+    border: 5px solid black;
+    width: 80%;
     margin: 75px auto;
     border-radius: 25px;
     box-shadow: 3px 3px 3px rgb(0, 0, 0, 0.5);
