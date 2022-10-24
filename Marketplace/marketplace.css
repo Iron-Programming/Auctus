@@ -74,42 +74,59 @@ body {
 }
 
 #market-container {
-    box-shadow: 2px 2px 2px rgb(92, 67, 32);
+    background-color: blue;
 }
 
 .market-item {
     width: 200px;
 }
+@keyframes addOverlay {
+    0% { 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+                      url("../ExampleUser/soap.jpg");
+     }
+     20% { 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+                      url("../ExampleUser/soap.jpg");
+     }
+     40% { 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                      url("../ExampleUser/soap.jpg");
+     }
+     60% { 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                      url("../ExampleUser/soap.jpg");
+     }
+     80% { 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                      url("../ExampleUser/soap.jpg");
+     }
+     100% { 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url("../ExampleUser/soap.jpg");
+     }
+}
 .market-item .desc-div {
-    background-color: rgb(208, 197, 183);
-    height: 150px;
+    background-image: url("../ExampleUser/soap.jpg");
+    background-size: cover;
+    height: 184px;
+    width: 190px;
     padding: 5px 8px 0px 8px;
     display: flex;
     flex-direction: column;
+    box-shadow: 2px 2px 2px rgb(92, 67, 32);
 }
 .market-item .desc-div p {
     flex-basis: 550px;
     margin: 0px;
+    color: rgb(255, 255, 255, 0);
 }
-.market-item .location-text {
-    float: right;
-    pointer-events: all;
+.market-item .desc-div:hover p {
+    color: rgb(255, 255, 255, 0.9);
+    transition: color 0.1s ease-in-out;
 }
-.market-item .location-text span.popup {
-    display: none;
-    pointer-events: none;
-}
-.market-item .location-text:hover span.popup {
-    display: relative;
+.market-item .desc-div:hover {
+    animation: addOverlay 0.1s ease-in-out;
+    animation-fill-mode: forwards;
     cursor: pointer;
-}
-.market-item img {
-    width: 35px;
-    margin-top: 5px;
-    border: 2px solid black;
-    border-radius: 25px;
-}
-.market-item img:hover {
-    cursor: pointer;
-    border: 2px solid rgb(0, 0, 0, 0.3);
 }
