@@ -249,6 +249,36 @@
 @media only screen and (max-width: 999px) {
     #user-designs { justify-content: center; }
 }
+button#add-design {
+    border: 2px solid rgb(6, 159, 176);
+    padding: 25px;
+    float: right;
+    margin-right: 25px;
+    margin-top: -75px;
+    transition: border 0.3s ease-in-out;
+}
+button#add-design .material-symbols-outlined {
+    color: rgb(6, 159, 176);
+    font-size: 35px;
+    margin: 0px;
+    transition: color 0.3s ease-in-out;
+}
+button#add-design:hover {
+    cursor: pointer;
+    border: 2px solid rgb(71, 210, 226);
+    transition: border 0.3s ease-in-out;
+}
+button#add-design:hover .material-symbols-outlined {
+    color: rgb(71, 210, 226);
+    transition: color 0.3s ease-in-out;
+}
+@media only screen and (max-width: 500px) {
+    button#add-design { 
+        float: none;
+        margin: 50px 50px 0px 50px;
+        width: calc(100% - 100px);
+    }
+}
 
 /*********************************************
 * Marketing Packages Page
@@ -314,4 +344,35 @@
 }
 @media only screen and (max-width: 999px) {
     #user-packages { justify-content: center; }
+}
+
+button#add-package {
+    border: 2px solid rgb(6, 159, 176);
+    padding: 25px;
+    float: right;
+    margin-right: 25px;
+    margin-top: -75px;
+    transition: border 0.3s ease-in-out;
+}
+button#add-package .material-symbols-outlined {
+    color: rgb(6, 159, 176);
+    font-size: 35px;
+    margin: 0px;
+    transition: color 0.3s ease-in-out;
+}
+button#add-package:hover {
+    cursor: pointer;
+    border: 2px solid rgb(71, 210, 226);
+    transition: border 0.3s ease-in-out;
+}
+button#add-package:hover .material-symbols-outlined {
+    color: rgb(71, 210, 226);
+    transition: color 0.3s ease-in-out;
+}
+@media only screen and (max-width: 500px) {
+    button#add-package { 
+        float: none;
+        margin: 50px 50px 0px 50px;
+        width: calc(100% - 100px);
+    }
 }
