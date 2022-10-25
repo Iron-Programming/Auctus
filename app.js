@@ -6,8 +6,11 @@ const bodyParser = require("body-parser"); // For parsing JSON data
 const https = require("https"); // For making https requests
 const mongoose = require("mongoose"); // Setting up Mongoose DB
 // const md5 = require("md5");  // Setting up md5 encryption
-const bcrypt = require("bcrypt");  // Setting up bcrypt for salting and hashing passwords
-const saltRounds = 10;
+// const bcrypt = require("bcrypt");  // Setting up bcrypt for salting and hashing passwords
+// const saltRounds = 10;
+const session = require('express-session');
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
 
 
 app.use(express.static("public")); // Public folder that hold all of our static resources.  The server pulls from this.
@@ -15,6 +18,14 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+app.use(session({
+  secret: "The little secret.",
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());     // Create Passport Session
 
 /////////////////////////////////////////////////////////////////////////////////////////
 ////// Database Setup(Mongoose) \\\\\\
@@ -31,11 +42,17 @@ const userSchema = new mongoose.Schema ({ // Creating the Schema(collection or t
   password: String
 });
 
+userSchema.plugin(passportLocalMongoose);   // Enable passport plugin for encrypting Database
+
 // userSchema.plugin(encrypt, {secret: process.env.SECRET, encryptedFields: ["password"] });
 
 
 const User = new mongoose.model("User", userSchema); // Creating new schema for database
 
+passport.use(User.createStrategy());
+
+passport.serializeUser(User.serializeUser());       // Serialize and deserialize session cookies
+passport.deserializeUser(User.deserializeUser());
 
 /////////////////////////////////////////////////////////////////////////////////////////
               ///////// GET requests \\\\\\\\\\\
@@ -64,6 +81,7 @@ app.get("/privacypolicy", function(req, res) {
 
 app.get("/documentation", function(req, res) { // CSS not loading
   res.sendFile(__dirname + "/documentation.html");
+  //res.render("/documentation");
 });
 
 app.get("/account", function(req, res) {
@@ -82,50 +100,98 @@ app.get("/dashboard", function(req, res) {
   res.sendFile(__dirname + "/dashboard.html");
 });
 
-// app.get("/secrets", function(req, res){
-//   res.sendFile(__dirname + "/secrets.html");
-// });
+app.get("/secrets", function(req, res){
+  if (req.isAuthenticated()){
+    res.sendFile(__dirname + "/secrets.html");
+    //res.redirect("/secrets");
+  } else {
+    res.sendFile(__dirname + "/signin.html");
+  //res.redirect("/signin");
+  }
+
+});
 
 /////////////////////////////////////////////////////////////////////////////////////////
                 ////////// POST functions \\\\\\\\\\\
 /////////////////////////////////////////////////////////////////////////////////////////
 
+// app.post("/signup", function(req, res){
+//
+//   bcrypt.hash(req.body.password, saltRounds, function(err, hash){
+//     const newUser = new User({
+//       email: req.body.email,
+//       password: hash
+//     });
+//
+//     newUser.save(function(err){
+//       if (err){
+//         console.log(err);
+//       } else {
+//         res.sendFile(__dirname + "/secrets.html");
+//       }
+//     });
+//   });
+// });
+//
+// app.post("/signin", function(req, res){
+//   const email = req.body.email;
+//   const password = req.body.password;
+//
+//   User.findOne({email:email}, function(err, foundUser){
+//     if (err){
+//       console.log(err);
+//     } else {
+//       if (foundUser) {
+//         bcrypt.compare(password, foundUser.password, function(err, result){
+//           if (result === true){
+//               res.sendFile(__dirname + "/secrets.html");
+//           }
+//         });
+//       }
+//     }
+//   });
+// });
+
+
+
 app.post("/signup", function(req, res){
 
-  bcrypt.hash(req.body.password, saltRounds, function(err, hash){
-    const newUser = new User({
-      email: req.body.email,
-      password: hash
-    });
-
-    newUser.save(function(err){
-      if (err){
-        console.log(err);
-      } else {
-        res.sendFile(__dirname + "/secrets.html");
-      }
-    });
+  User.register({username: req.body.username}, req.body.password, function(err, user){
+    if (err) {
+      console.log(err);
+      res.redirect("/signup");
+    } else {
+      passport.authenticate("local")(req, res, function(){
+        res.redirect("/secrets");
+      });
+    }
   });
+
 });
 
-app.post("/signin", function(req, res){
-  const email = req.body.email;
-  const password = req.body.password;
 
-  User.findOne({email:email}, function(err, foundUser){
+
+app.post("/signin", function(req, res){
+
+  const user = new User({
+  username: req.body.username,
+  password: req.body.password
+});
+  req.login(user, function(err){
     if (err){
       console.log(err);
     } else {
-      if (foundUser) {
-        bcrypt.compare(password, foundUser.password, function(err, result){
-          if (result === true){
-              res.sendFile(__dirname + "/secrets.html");
-          }
-        });
-      }
+      passport.authenticate("local")(req, res, function(){
+        res.redirect("/secrets");
+      });
     }
   });
+
 });
+
+
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////
               ///////// Server code \\\\\\\\\\
