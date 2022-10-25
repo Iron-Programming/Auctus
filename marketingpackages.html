@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
-    File: yourprofile.html
-    Description: yourprofile.html is the logged in user's profile
+    File: marketingpackages.html
+    Description: marketingpackages.html stores all marketing packages
     Authors: Nathan Cochran & Oren Kirchoff
     Date: 2022-10-06
 -->
@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>Nathan Cochran | Auctus</title>
+    <title>Marketing Packages | Auctus</title>
     
     <link href="style.css" rel="stylesheet" />
     <link href="Profile/profile.css" rel="stylesheet" />
@@ -30,7 +30,7 @@
     <!-- Scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="tools.js" defer></script>
-    <script src="Profile/profile.js" defer></script>
+    <script src="Profile/packages.js" defer></script>
 </head>
 
 <!-- Body -->
@@ -116,56 +116,20 @@
     </header>
 
     <!-- Main Content Container -->
-    <main class="container-with-padding">
+    <main class="container-without-padding">
 
         <!-- Main Containt -->
-        <div class="main-content">
-
-            <!-- User Overview -->
-            <div class="row-user-overview">
+        <div class="main-content packages-page">
+            <div class="page-banner">
                 <img src="ExampleUser/CowboyCircle.png">
-                <div class="same-line">
-                    <h3 class="display-name">Display Name</h3>
-                    <p class="username">@username</p>
-                    <!-- following-user -->
-                    <p class="followers-line"><span class="follower-num">???</span> followers <button class="follow-button">Follow</button></p>
-                </div>
-                
-                <div class="hr-b2"></div>
-                
-                <div class="bio">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                        molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-                        numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-                        optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
-                        obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
-                        nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
-                        tenetur error, harum nesciunt ipsum debitis quas aliquid.</p>
-                </div>
-            </div>
-
-            <div class="icons-nav">
-                <a href=""><button><span class="material-symbols-outlined">notifications</span></button></a>
-                <a href=""><button><span class="material-symbols-outlined">edit</span></button></a>
-                <a href=""><button><span class="material-symbols-outlined">settings</span></button></a>
-            </div>
-
-            <!-- Designs -->
-            <div class="user-designs-showcase-container">
-                <h3 class="designs-showcase">Designs</h3>
-                <a href=""><p>View all<span class="material-symbols-outlined">arrow_forward</span></p></a>
-                <hr class="hr-b2" />
-                <div id="user-designs-showcase"></div>
+                <h4 class="banner-name">Marketing Packages</h4>
             </div>
 
             <hr class="hr-w1" />
+            <hr class="hr-w1" />
 
-            <!-- Marketing Packages -->
             <div class="user-packages-container">
-                <h3 class="designs">Marketing Packages</h3>
-                <a href=""><p>View all<span class="material-symbols-outlined">arrow_forward</span></p></a>
-                <hr class="hr-b2" />
-                <div id="user-marketing-packages"></div>
+                <div id="user-packages"></div>
             </div>
         </div>
     </main>

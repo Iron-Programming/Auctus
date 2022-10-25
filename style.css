@@ -163,6 +163,7 @@ header nav ul li button:hover {
     position: relative;
     right: -8px;
     top: -3px;
+    z-index: 10;
     width: 200px;
     border: 1px solid black;
     border-radius: 1px;
@@ -175,6 +176,7 @@ header nav ul li button:hover {
     position: absolute;
     top: -30px;
     right: 20px;
+    z-index: 10;
     width: 0;
     height: 0;
     border-width: 10px;
@@ -207,6 +209,7 @@ header nav ul li button:hover {
     float: right;
     width: 0px;
     height: 0px;
+    z-index: 11;
 }
 .notification-container p {
     background-color: rgba(0, 106, 255);
