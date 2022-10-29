@@ -120,13 +120,84 @@
 
         <!-- Main Containt -->
         <div class="main-content">
-            <div id="new-design-panel">
+            <div id="new-design-panel-container">
+                <div id="new-design-panel">
+                    <a href="designs.html"><button class="close-panel"><span class="material-symbols-outlined"> close </span></button></a>
 
+                    <!-- New Design Form -->
+                    <form>
+                        <!-- Form Banner (Name) -->
+                        <div class="banner">
+                          <h1>New Design</h1>
+                        </div>
+
+                        <!-- Line Break -->
+                        <br/>
+
+                        <!-- Design Attribute Fields-->
+                        <fieldset>
+                          <legend>Design Attributes</legend>
+                          <div class="columns">
+                            <div class="item">
+                              <label for="designname">Design Name</label>
+                              <input id="designname" type="text" name="designname" value="New Design" />
+                            </div>
+                            <div class="item">
+                                <label for="designpermissions">Permissions</label>
+                                <select name="designpermissions">
+                                    <option value="" disabled selected>Select permission</option>
+                                    <option value="public">Public</option>
+                                    <option value="private">Private</option>
+                                </select>
+                            </div>
+                        </fieldset>
+
+                        <!-- Line Break -->
+                        <br/>
+                        
+                        <fieldset>
+                          <legend>Design Templates</legend>
+                          <div class="columns">
+                            <div class="item">
+                                <label for="template">Select a design dimension</label>
+                                <select name="template">
+                                    <option value="" disabled selected>Select Template</option>
+                                    <option value="two-dimensions">2D Design</option>
+                                    <option value="three-dimensions">3D Design</option>
+                                </select>
+                            </div>
+                            
+                            <div class="item">
+                                <label for="template">Select Template</label>
+                                <select name="template">
+                                    <option value="" disabled selected>Select Template</option>
+                                    <div class="twod-templates">
+                                        <option value="two-temp1">2D Template 1</option>
+                                    </div>
+                                    <div class="threed-templates">
+                                        <option value="three-temp1">3D Template 1</option>
+                                    </div>
+                                    
+                                </select>
+                            </div>
+                          </div>
+                        </fieldset>
+
+                        <!-- Form Buttons -->
+                        <div class="btn-block">
+                           <button type="submit" href="/">Create</button>
+                        </div>
+                    </form>
+                      <!-- End of Form -->
+
+
+                </div>
             </div>
 
             <!-- Design Area & Controls -->
             <div id="design-area">
                 
+
             </div>
 
             <div id="design-controls">

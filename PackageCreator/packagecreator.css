@@ -1,13 +1,13 @@
 @charset "utf-8";
 
 /*
-    File: designer.css
-    Description: Styles designer
+    File: packagecreator.css
+    Description: Styles package creator
     Autors: Nathan Cochran & Oren Kirchoff
     Date: 2022-10-28
 */
 
-#new-design-panel-container {
+#new-package-panel-container {
     position: absolute;
     left: 0px;
     top: 0px;
@@ -16,7 +16,7 @@
     background-color: rgb(0, 0, 0, 0.8);
     z-index: 15;
 }
-#new-design-panel {
+#new-package-panel {
     width: calc(90vw - 50px);
     margin-left: 5vw;
     margin-top: 5vh;
