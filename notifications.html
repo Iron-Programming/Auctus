@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!--
-    File: about.html
-    Description: about.html provides
+    File: notifications.html
+    Description: notifications.html is the user's inbox
     Authors: Nathan Cochran & Oren Kirchoff
-    Date: 2022-09-25
+    Date: 2022-10-06
 -->
 
 <html lang="en">
@@ -13,12 +13,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>Documentation | Auctus</title>
+    <title>Notifications | Auctus</title>
+    
     <link href="style.css" rel="stylesheet" />
-    <link href="Documentation/documentation.css" rel="stylesheet" />
+    <link href="Notifications/notifications.css" rel="stylesheet" />
 
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -26,6 +30,7 @@
     <!-- Scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="tools.js" defer></script>
+    <script src="Notifications/notifications.js" defer></script>
 </head>
 
 <!-- Body -->
@@ -111,16 +116,20 @@
     </header>
 
     <!-- Main Content Container -->
-    <main>
+    <main class="container-with-padding">
 
         <!-- Main Containt -->
         <div class="main-content">
-
-            <!-- Page Title -->
-            <div class="top-container">
-                <h1>Documentation</h1>
+            <div class="notif-header">
+                
             </div>
 
+            <div class="notif-container">
+                <div class="empty-notifications">
+                    <img src="Media/Empty_Notif.jpg">
+                    <p>You have no notifications!</p>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -156,6 +165,7 @@
         </div>
 
     </footer>
+
 </body>
 
 </html>
