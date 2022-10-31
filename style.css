@@ -46,6 +46,13 @@ main {
 .desktop-version { 
     display: none; 
 }
+/** Displaying / Hiding Classes **/
+.visible-item {
+    display: block;
+}
+.hidden-item {
+    display: none;
+}
 
 /*********************************************
 * Fonts and Icons
@@ -94,12 +101,13 @@ h6 {
 *********************************************/
 header {
     background-color: rgb(197, 165, 113);
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
     padding: 25px;
     height: 75px;
+    z-index: 5;
 }
-header:last-of-type {
-    margin: 0px 0px 20px 0px;
+header {
+    margin: 0px;
 }
 header .logoImage {
     height: 50px;
@@ -237,7 +245,7 @@ header nav ul li button:hover {
 * Main Layout
 *********************************************/
 main {
-    padding: 25px 0px 25px 0px;
+    padding: 0px 0px 0px 0px;
 }
 .row {
     display: flex;
@@ -257,7 +265,7 @@ main {
     padding: 15px;
 }
 main.container-with-padding {
-    padding: 0px 20px;
+    padding: 25px 20px;
 }
 @media only screen and (max-width: 480px) {
     main.container-with-padding {
@@ -303,6 +311,9 @@ footer {
     background-color: rgb(197, 165, 113);
     margin: 25px 0px 0px 0px;
     padding: 25px;
+}
+footer.without-margin {
+    margin: 0px;
 }
 .footer-columns {
     display: grid;

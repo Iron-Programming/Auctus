@@ -26,6 +26,7 @@
     <!-- Scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="tools.js" defer></script>
+    <script src="Documentation/documentation.js" defer></script>
 </head>
 
 <!-- Body -->
@@ -113,19 +114,139 @@
     <!-- Main Content Container -->
     <main>
 
-        <!-- Main Containt -->
-        <div class="main-content">
+        <div class="page-content-container-with-sidebar">
+            <!-- Side Bar -->
+            <div class="side-bar">
+                <!-- Sidebar Items -->
+                <ul>
+                    <li>
+                        <a href="#" onclick="toggleSublist(this)"><span class="material-symbols-outlined list-arrow"> arrow_forward_ios </span>Getting Started</a>
+                        <ul class="sub-list">
+                            <li onclick="switchTab('about')">About</li>
+                            <li onclick="switchTab('creating-an-account')">Creating an Account</li>
+                            <li onclick="switchTab('join-the-community')">Join the Community</li>
+                            <li onclick="switchTab('search-the-marketplace')">Search the Marketplace</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" onclick="toggleSublist(this)"><span class="material-symbols-outlined list-arrow"> arrow_forward_ios </span>Auctus Designer</a>
+                        <ul class="sub-list">
+                            <li onclick="switchTab('introduction-to-designs')">Introduction to Designs</li>
+                            <li onclick="switchTab('creating-2d-designs')">Creating 2D Designs</li>
+                            <li onclick="switchTab('creating-3d-designs')">Creating 3D Designs</li>
+                            <li onclick="switchTab('using-templates')">Using Templates</li>
+                            <li onclick="switchTab('sharing-and-studying-designs')">Sharing & Studying Designs</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" onclick="toggleSublist(this)"><span class="material-symbols-outlined list-arrow"> arrow_forward_ios </span>Marketing</a>
+                        <ul class="sub-list">
+                            <li onclick="switchTab('introduction-to-marketing-packages')">Introduction to Marketing Packages</li>
+                            <li onclick="switchTab('searching-the-marketplace')">Searching the Marketplace</li>
+                            <li onclick="switchTab('utilizing-ads')">Utilizing Ads & Boosts (Trending Items)</li>
+                            <li onclick="switchTab('email-marketing-campaigns')">Email Marketing Campaigns</li>
+                        </ul>
+                    </li>
+                </ul>
 
-            <!-- Page Title -->
-            <div class="top-container">
-                <h1>Documentation</h1>
+                <div class="mobile-arrow"><span onclick="expandSideBar()" class="material-symbols-outlined"> arrow_right_alt </span></div>
             </div>
 
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Getting Started Tabs / Sections -->
+
+                <!-- About -->
+                <div class="tab" id="about">
+                    <h3>About</h3>
+
+                    <p>Welcome to Auctus! This website is designed to help you bring your personal business ideas 
+                        to reality by creating designs to represent your setup, and then creating marketing packages 
+                        to advertise your products together in packages.</p>
+                </div>
+                <!-- Creating an Account -->
+                <div class="tab" id="creating-an-account">
+                    <h3>Creating an Account</h3>
+
+                    <p>...</p>
+                </div>
+                <!-- Join the Community -->
+                <div class="tab" id="join-the-community">
+                    <h3>Join the Community</h3>
+
+                    <p>...</p>
+                </div>
+                <!-- Search the Marketplace -->
+                <div class="tab" id="search-the-marketplace">
+                    <h3>Search the Marketplace</h3>
+
+                    <p>...</p>
+                </div>
+
+                <!-- Auctus Designer Tabs / Sections -->
+                <!-- Introduction to Designs -->
+                <div class="tab" id="introduction-to-designs">
+                    <h3>Introduction to Designs</h3>
+
+                    <p>...</p>
+                </div>
+                <!-- Creating 2D Designs -->
+                <div class="tab" id="creating-2d-designs">
+                    <h3>Creating 2D Designs</h3>
+
+                    <p>...</p>
+                </div>
+                <!-- Creating 3D Designs -->
+                <div class="tab" id="creating-3d-designs">
+                    <h3>Creating 3D Designs</h3>
+
+                    <p>...</p>
+                </div>
+                <!-- Using Templates -->
+                <div class="tab" id="using-templates">
+                    <h3>Using Templates</h3>
+
+                    <p>...</p>
+                </div>
+                <!-- Sharing & Studying Designs -->
+                <div class="tab" id="sharing-and-studying-designs">
+                    <h3>Sharing & Studying Designs</h3>
+
+                    <p>...</p>
+                </div>
+
+                <!--Marketing Tabs / Sections -->
+                <!-- Introduction to Marketing Packages -->
+                <div class="tab" id="introduction-to-marketing-packages">
+                    <h3>Introduction to Marketing Packages</h3>
+
+                    <p>...</p>
+                </div>
+                <!-- Searching the Marketplace -->
+                <div class="tab" id="searching-the-marketplace">
+                    <h3>Searching the Marketplace</h3>
+
+                    <p>...</p>
+                </div>
+                <!-- Utilizing Ads & Boosts (Trending Items) -->
+                <div class="tab" id="utilizing-ads">
+                    <h3>Utilizing Ads & Boosts (Trending Items)</h3>
+
+                    <p>...</p>
+                </div>
+                <!-- Email Marketing Campaigns -->
+                <div class="tab" id="email-marketing-campaigns">
+                    <h3>Email Marketing Campaigns/h3>
+
+                    <p>...</p>
+                </div>
+            </div>
         </div>
+
     </main>
 
     <!-- Footer Container -->
-    <footer>
+    <footer class="without-margin">
 
         <!-- Footer Content -->
 

@@ -189,8 +189,8 @@
 *********************************************/
 .designs-page {
     background-color: rgb(239, 239, 239);
-    margin-top: -40px;
-    margin-bottom: -50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     padding: 25px 0px;
     min-height: 750px;
 }
@@ -285,8 +285,8 @@ button#add-design:hover .material-symbols-outlined {
 *********************************************/
 .packages-page {
     background-color: rgb(239, 239, 239);
-    margin-top: -40px;
-    margin-bottom: -50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     padding: 25px 0px;
     min-height: 750px;
 }

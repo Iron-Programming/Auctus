@@ -17,6 +17,9 @@ body {
 /********************************************* 
 * Market Search Bar 
 *********************************************/
+header:last-of-type {
+    margin: 0px 0px 25px 0px;
+}
 #search-bar {
     background-color: white;
     height: 50px;
