@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+/*
+    File: welcome.class
+    Description: Styles the Welcome page (index.html)
+    Autors: Nathan Cochran & Oren Kirchoff
+    Date: 2022-09-11
+*/
+
+/*********************************************
+* Base CSS Styles
+*********************************************/
+#welcome-slogan-container h1 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 55px;
+}
+#welcome-slogan-container p {
+    font-size: 20px;
+    margin-top: 0px;
+}
+#get-started-button {
+    background-color: rgb(197, 165, 113);
+    border-radius: 5px;
+    border: none;
+    height: 50px;
+    padding: 15px;
+}
+#get-started-button a {
+    text-decoration: none;
+    color: black;
+}
+#slogan-image img {
+    width: 100%;
+}
+#welcome-title {
+    font-size: 100px;
+}
+
+/*********************************************
+* Tablet Styles: 481px to 768
+**********************************************/
+
+@media only screen and (max-width: 768px) {
+    #welcome-title { font-size: 75px; }
+    #welcome-slogan-container h1 { font-size: 25px; }
+    #welcome-slogan-container p { font-size: 16px; }
+}
+
+/**********************************************
+* Mobile Styles: 0 to 480px
+***********************************************/
+@media only screen and (max-width: 480px) {
+    
+}

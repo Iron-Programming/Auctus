@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+/*
+    File: designer.css
+    Description: Styles designer
+    Autors: Nathan Cochran & Oren Kirchoff
+    Date: 2022-10-28
+*/
+
+#new-design-panel-container {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.8);
+    z-index: 15;
+}
+#new-design-panel {
+    width: calc(90vw - 50px);
+    margin-left: 5vw;
+    margin-top: 5vh;
+    background-color: rgb(162, 162, 162);
+    padding: 25px;
+}
+
+button.close-panel {
+    position: absolute;
+    right: 5vw;
+    top: 5vh;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(156, 130, 89);
+    border: none;
+}
+button.close-panel .material-symbols-outlined {
+    color: rgb(0, 0, 0);
+}
+button.close-panel:hover {
+    cursor: pointer;
+    background-color: #927a53;
+}
+
+/** Styling Form **/
+.banner h1 {
+    font-size: 35px;
+    margin-right: 50px;
+}
+
+legend {
+    padding: 5px;      
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+input, select, textarea {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+input, select {
+    width: calc(100% - 10px);
+    padding: 5px;
+}
+.item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+    color:  #8e6523;
+}
+.item input:hover, .item select:hover, .item textarea:hover {
+    border: 1px solid transparent;
+    box-shadow: 0 0 3px 0  #8e6523;
+    color: #202020;
+}
+.item {
+    position: relative;
+    margin: 10px 0;
+}
+.columns {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.columns div {
+    width: 48%;
+    min-width: 200px;
+}
+
+.btn-block {
+    margin-top: 25px;
+    text-align: center;
+}
+.btn-block button {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px; 
+    background:  rgb(156, 130, 89);
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+.btn-block button:hover {
+    background: #927a53;
+}

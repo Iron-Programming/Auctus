@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--
+    File: marketingpackages.html
+    Description: marketingpackages.html stores all marketing packages
+    Authors: Nathan Cochran & Oren Kirchoff
+    Date: 2022-10-06
+-->
+
+<html lang="en">
+
+<!-- Head -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Marketing Packages | Auctus</title>
+    
+    <link href="style.css" rel="stylesheet" />
+    <link href="Profile/profile.css" rel="stylesheet" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="tools.js" defer></script>
+    <script src="Profile/packages.js" defer></script>
+</head>
+
+<!-- Body -->
+<body>
+
+    <!-- Header Container -->
+    <header>
+
+        <!-- Header Content -->
+        <div class="header-content mobile-version">
+            <nav class="left-main-menu main-menu">
+                <ul>
+                    <li><a href="index.html"><button><img class="logoImage" src="Media/Logo.png"></button></a></li>
+                    <li><a href="marketplace.html"><span class="material-symbols-outlined">storefront</span></a></li>
+                    <li><a href="documentation.html"><button><span class="material-symbols-outlined">contact_support</span></button></a></li>
+                </ul>
+            </nav>
+            <nav class="right-main-menu main-menu">
+                <ul class="logged-in">
+                    <li class="account-icon-container">
+                        <a onclick="handleHeaderPopup()" href="#" class="account-item"><span class="display-name">Error_Name</span><span class="material-symbols-outlined">account_circle</span></a>
+                        <div class="headerPopup">
+                            <ul class="sub-menu-items">
+                                <span class="top-bot"></span>
+                                <span class="top-bot top-bot-border"></span>
+                                <li><a href="profile.html">Your Profile</a></li>
+                                <li><a href="designs.html">Designs</a></li>
+                                <li><a href="marketingpackages.html">Marketing Packages</a></li>
+                                <li><a href="settings.html">Settings</a></li>
+                                <li class="notifsWords"><a href="notifications.html">Notifications</a></li>
+                                <li><a href="community.html">Community</a></li>
+                                <li><a href="support.html">Contact Us</a></li>
+                                <li><a href="#" onclick="resolveSignOut()">Sign Out</a></li>
+                            </ul>
+                        </div>
+                        <div class="notification-container"><p>9+</p></div>
+                    </li>
+                </ul>
+
+                <ul class="logged-out">
+                    <li><a href="signin.html"><button>Sign In</button></a></li>
+                    <li><a href="signup.html"><button class="get-started">Get Started</button></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-content desktop-version">
+            <nav class="left-main-menu main-menu">
+                <ul>
+                    <li><a href="index.html"><button><img class="logoImage" src="Media/Logo.png"></button></a></li>
+                    <li><a href="marketplace.html"><button>Marketplace</button></a></li>
+                    <li><a href="documentation.html"><button>Documentation</button></a></li>
+                </ul>
+            </nav>
+            <nav class="right-main-menu main-menu">
+                <ul class="logged-in">
+                    <li class="account-icon-container">
+                        <a onclick="handleHeaderPopup()" href="#" class="account-item"><span class="display-name">Error_Name</span><span class="material-symbols-outlined">account_circle</span></a>
+                        <div class="headerPopup">
+                            <ul class="sub-menu-items">
+                                <span class="top-bot"></span>
+                                <span class="top-bot top-bot-border"></span>
+                                <li><a href="profile.html">Your Profile</a></li>
+                                <li><a href="designs.html">Designs</a></li>
+                                <li><a href="marketingpackages.html">Marketing Packages</a></li>
+                                <li><a href="settings.html">Settings</a></li>
+                                <li class="notifsWords"><a href="notifications.html">Notifications</a></li>
+                                <li><a href="community.html">Community</a></li>
+                                <li><a href="support.html">Contact Us</a></li>
+                                <li><a href="#" onclick="resolveSignOut()">Sign Out</a></li>
+                            </ul>
+                        </div>
+                        <div class="notification-container"><p>9+</p></div>
+                    </li>
+                </ul>
+
+                <ul class="logged-out">
+                    <li><a href="signin.html"><button>Sign In</a></button></a></li>
+                    <li><a href="signup.html"><button class="get-started">Get Started</button></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container-without-padding">
+
+        <!-- Main Containt -->
+        <div class="main-content packages-page">
+            <div class="page-banner">
+                <img src="ExampleUser/CowboyCircle.png">
+                <h4 class="banner-name">Marketing Packages</h4>
+            </div>
+
+            <a href="packagecreator.html"><button id="add-design"><span class="material-symbols-outlined">add</span></button></a>
+
+            <hr class="hr-w1" />
+
+            <div class="user-packages-container">
+                <div id="user-packages"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Container -->
+    <footer class="without-margin">
+
+        <!-- Footer Content -->
+
+        <!-- (Upper Section): Footer Columns -->
+        <div class="footer-columns footer-content">
+            <div class="footer-column">
+                <img class="logoImage" src="Media/Logo.png">
+            </div>
+            <div class="footer-column">
+                <h6>Navigation</h6>
+                <p><a href="yourprofile.html">Your Profile</a></p>
+                <p><a href="marketplace.html">Marketplace</a></p>
+                <p><a href="documentation.html">Documentation</a></p>
+            </div>
+            <div class="footer-column">
+                <h6>Follow Us</h6>
+                <p><a href="" target="_blank">YouTube</a></p>
+                <p><a href="" target="_blank">Facebook</a></p>
+                <p><a href="" target="_blank">Discord</a></p>
+            </div>
+        </div>
+
+        <div class="footer-separator"></div>
+
+        <!-- (Socket): Footer Info -->
+        <div class="footer-bottom footer-content">
+            <p>&copy; 2022 Auctus | <a href="termsofuse.html">Terms Of Use</a> | <a href="privacypolicy.html">Privacy Policy</a></p>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

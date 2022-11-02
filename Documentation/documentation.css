@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+/*
+    File: about.css
+    Description: Styles the About page (about.html)
+    Autors: Nathan Cochran & Oren Kirchoff
+    Date: 2022-25-11
+*/
+
+/*********************************************
+* Base CSS Styles
+*********************************************/
+.page-content-container-with-sidebar {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 75vh;
+}
+
+.side-bar {
+    padding: 10px;
+    min-width: 250px;
+    max-width: 250px;
+    background-color: #e0ded8;
+    
+}
+.side-bar ul {
+    list-style: none;
+}
+.side-bar ul ul {
+    list-style-type: disc;
+}
+.side-bar a {
+    color: black;
+    text-decoration: underline;
+}
+.side-bar .list-arrow {
+    font-size: 20px;
+    line-height: 20px;
+    margin-right: 10px;
+    position: relative;
+    top: 2.5px;
+}
+.list-open {
+    transform: rotate(90deg);
+}
+.list-close {
+    transform: rotate(0deg);
+}
+.sub-list li:hover {
+    cursor: pointer;
+    color: rgb(105, 105, 105);
+}
+.mobile-arrow .material-symbols-outlined {
+    font-size: 35px;
+    position: absolute;
+    left: 275px;
+    top: 125px;
+    display: none;
+}
+.mobile-arrow .material-symbols-outlined:hover {
+    cursor: pointer;
+    background-color: rgb(105, 105, 105, 0.5);
+    border-radius: 25px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.page-content {
+    padding: 25px;
+}
+
+.tab p, .tab table {
+    max-width: 800px;
+}
+
+@media only screen and (max-width: 600px) {
+    .mobile-arrow .material-symbols-outlined {
+        display: block;
+        left: 25px;
+    }
+    .side-bar {
+        margin-left: -250px;
+    }
+    .page-content {
+        padding: 50px 25px 25px 25px;
+    }
+}
+
+/** Style Tables **/
+.taskTable {
+    border-collapse: collapse;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 10px 0px 30px 0px;
+    background-color: #c5a571;
+}
+.taskTable thead th {
+    color: white;
+}
+.taskTable td, .taskTable tbody th {
+    background-color: #e2c495;
+}
+.taskTable td:last-child {
+    text-align: center;
+}
+.taskTable th, .taskTable td {
+    border: none;
+    padding: 10px;
+}

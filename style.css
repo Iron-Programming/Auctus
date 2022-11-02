@@ -1,0 +1,472 @@
+@charset "utf-8";
+
+/*
+    File: style.css
+    Description: Styles common themes among the Auctus website
+    Autors: Nathan Cochran & Oren Kirchoff
+    Date: 2022-09-11
+*/
+
+/*********************************************
+* General Layout
+*********************************************/
+html {
+    height: 100%;
+}
+/* Extend body and main container to full height */
+body {
+    margin: 0px;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex-grow: 1;
+}
+/* Limit content width in containers */
+.header-content {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main-content {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer-content {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mobile-version { 
+    display: block;
+}
+.desktop-version { 
+    display: none; 
+}
+/** Displaying / Hiding Classes **/
+.visible-item {
+    display: block;
+}
+.hidden-item {
+    display: none;
+}
+
+/*********************************************
+* Fonts and Icons
+*********************************************/
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+h1, h2, h3 {
+    font-family: 'Libre Baskerville', serif;
+    margin: 0px;
+}
+h4, h5, h6 {
+    font-family: Helvetica;
+    margin: 0px;
+}
+p, span, li {
+    font-family: Arial;
+    margin: 10px 0px 10px 0px;
+    font-size: 20px;
+}
+h1 {
+    font-size: 100px;
+}
+h2 {
+    font-size: 50px;
+}
+h3 {
+    font-size: 40px;
+}
+h4 {
+    font-size: 30px;
+}
+h5 {
+    font-size: 25px;
+}
+h6 {
+    font-size: 23px;
+}
+
+/*********************************************
+* Header Layout
+*********************************************/
+header {
+    background-color: rgb(197, 165, 113);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+    padding: 25px;
+    height: 75px;
+    z-index: 5;
+}
+header {
+    margin: 0px;
+}
+header .logoImage {
+    height: 50px;
+    position: relative;
+}
+nav.left-main-menu {
+    float: left;
+}
+.mobile-version .material-symbols-outlined {
+    font-size: 35px;
+    margin-top: 8px;
+}
+.mobile-version > * {
+    margin-left: -10px !important;
+    margin-right: -10px !important;
+}
+nav.right-main-menu {
+    float: right;
+}
+nav.main-menu {
+    height: 50px;
+}
+header nav ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+header nav ul li {
+    float: left;
+    line-height: 50px;
+    padding: 0px 10px;
+    text-align: center;
+    font-size: 17.5px;
+}
+header nav ul li button {
+    background-color: rgb(0, 0, 0, 0);
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+header .get-started {
+    border: 2px solid rgb(92, 67, 32);
+    padding: 5px;
+    border-radius: 5px;
+    height: 40px;
+}
+header nav ul li a {
+    text-decoration: none;
+    color: rgb(92, 67, 32);
+    transition: color 0.5s ease-in-out;
+    display: block;
+}
+header nav ul li button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+.sub-menu-items {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 3px black;
+    position: relative;
+    right: -8px;
+    top: -3px;
+    z-index: 10;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 1px;
+    background-color: white;
+}
+.sub-menu-items li {
+    margin: 0px;
+}
+.top-bot {
+    position: absolute;
+    top: -30px;
+    right: 20px;
+    z-index: 10;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent black transparent; 
+}
+.addHeaderPopup {
+    display: block;
+}
+.removeHeaderPopup {
+    display: none;
+}
+.top-bot-border {
+    top: -27px;
+    border-color: transparent transparent #fff transparent; 
+}
+.account-icon-container .account-item {
+    text-align: right;
+}
+.account-icon-container .material-symbols-outlined {
+    font-size: 40px;
+    position: relative;
+    top: 14px;
+    margin: -5px;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+}
+.notification-container {
+    position: relative;
+    float: right;
+    width: 0px;
+    height: 0px;
+    z-index: 11;
+}
+.notification-container p {
+    background-color: rgba(0, 106, 255);
+    border-radius: 25px;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    line-height: 20px;
+    font-size: 15px;
+}
+.notif-off {
+    right: 25px;
+    top: -65px;
+}
+.notif-on {
+    right: 57.5px;
+    top: -202.5px;
+}
+.notifsWords {
+    position: relative;
+    left: -17.5px;
+}
+
+/*********************************************
+* Main Layout
+*********************************************/
+main {
+    padding: 0px 0px 0px 0px;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.column-1 {
+    max-width: 100vw;
+}
+.column-2 {
+    max-width: 50vw;
+    padding: 15px;
+}
+.column-3 {
+    max-width: 33.33vw;
+    padding: 15px;
+}
+main.container-with-padding {
+    padding: 25px 20px;
+}
+@media only screen and (max-width: 480px) {
+    main.container-with-padding {
+        padding: 0px 10px;
+    }
+}
+/* Styling hr tags : horizontal breaks */
+.hr-b1 {
+    border: 2px solid black; 
+    width: 30%; 
+    margin: 5px auto;
+}
+.hr-b2 {
+    border: 2px solid black;
+    width: calc(100% - 20px); 
+    margin: 5px 5px;
+    margin-bottom: 20px;
+}
+.hr-p1 {
+    border: 5px solid black;
+    width: 80%;
+    margin: 75px auto;
+    border-radius: 25px;
+    box-shadow: 3px 3px 3px rgb(0, 0, 0, 0.5);
+}
+.hr-w1 {
+    border: none;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+/* Styling vertical breaks */
+.vb-b1 {
+    height: 90%;
+    margin: 5px 25px 0px 25px;
+    width: 0px;
+    border: 2px solid black;
+}
+
+/*********************************************
+* Footer Layout
+*********************************************/
+footer {
+    background-color: rgb(197, 165, 113);
+    margin: 25px 0px 0px 0px;
+    padding: 25px;
+}
+footer.without-margin {
+    margin: 0px;
+}
+.footer-columns {
+    display: grid;
+}
+.footer-column {
+    padding: 15px 15px 15px 25px;
+}
+.footer-column h6 {
+    font-size: 18px;
+    margin: 5px 5px 5px 0px;
+}
+.footer-column p {
+    margin: 0px 0px 5px 0px;
+}
+.footer-column a, .footer-bottom a {
+    color: black;
+}
+footer .logoImage {
+    width: 125px;
+    height: 125px;
+}
+.footer-separator {
+    border-top: 2px solid black;
+    margin: 25px 0px 25px 0px;
+}
+
+/*********************************************
+* Bootstrap CSS
+*********************************************/
+
+.btn-primary {
+  background-color: rgb(197, 165, 113) !important;
+  border-color: rgb(197, 165, 113) !important;
+}
+
+.form-group {
+  width: 20% !important;
+}
+
+/**********************************************
+* Mobile Styles: 0 to 480px
+***********************************************/
+
+@media only screen and (max-width: 480px) {
+    .footer-columns { grid-template-columns: 1fr; }
+    .row { flex-direction: column; }
+}
+
+/*********************************************
+* Tablet Styles: 481px and greater
+**********************************************/
+
+@media only screen and (min-width: 481px) {
+    .footer-columns { grid-template-columns: 1fr 1fr; }
+}
+
+/*********************************************
+* Desktop Styles: 769px and greater
+**********************************************/
+@media only screen and (min-width: 769px) {
+    .footer-columns { grid-template-columns: 1fr 1fr 1fr; }
+    .mobile-version { display: none; }
+    .desktop-version { display: block; }
+}
+
+/*********************************************
+* Market Items
+*********************************************/
+.market-item {
+    width: 200px;
+    margin-bottom: 25px;
+}
+@keyframes addOverlay {
+    0% { 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+                      url("ExampleUser/soap.jpg");
+     }
+     20% { 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+                      url("ExampleUser/soap.jpg");
+     }
+     40% { 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                      url("ExampleUser/soap.jpg");
+     }
+     60% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                      url("ExampleUser/soap.jpg");
+     }
+     80% { 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                      url("ExampleUser/soap.jpg");
+     }
+     100% { 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url("ExampleUser/soap.jpg");
+     }
+}
+.market-item .desc-div {
+    background-image: url("ExampleUser/soap.jpg");
+    background-size: cover;
+    height: 184px;
+    width: 190px;
+    padding: 5px 8px 0px 8px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px rgb(92, 67, 32);
+}
+.market-item .desc-div p {
+    flex-basis: 550px;
+    margin: 0px;
+    color: rgb(255, 255, 255);
+}
+.market-item .desc-div:hover {
+    animation: addOverlay 0.1s ease-in-out;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
+.market-item .go-arrow {
+    float: right;
+    pointer-events: all;
+    color: white;
+}
+.market-item .go-arrow span {
+    font-size: 40px;
+    position: relative;
+    left: -2.5px;
+    top: 2.5px;
+}
+.market-item img {
+    position: relative;
+    top: 7.5px;
+    left: 5px;
+    width: 35px;
+    margin-top: 5px;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+.market-item img:hover {
+    cursor: pointer;
+    border: 2px solid rgb(0, 0, 0, 0.3);
+}
+
+.market-item .desc-div:hover p, .market-item .desc-div:hover img, .market-item .desc-div:hover .go-arrow {
+    opacity: 0.9;
+    transition: opacity 0.1s ease-in-out;
+}
+.market-item .desc-div:active p, .market-item .desc-div:active img, .market-item .desc-div:active .go-arrow {
+    opacity: 0.9;
+    transition: opacity 0.1s ease-in-out;
+}
+.market-item .desc-div p, .market-item .desc-div img, .market-item .desc-div .go-arrow {
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}

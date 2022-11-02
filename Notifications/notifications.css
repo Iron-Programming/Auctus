@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/*
+    File: notifications.css
+    Description: Styles notification inbox
+    Autors: Nathan Cochran & Oren Kirchoff
+    Date: 2022-09-11
+*/
+
+.empty-notifications {
+    width: 50%;
+    margin: 25px 25%;
+    text-align: center;
+}
+.empty-notifications img {
+    width: 100%;
+    filter: grayscale(100%);
+}
