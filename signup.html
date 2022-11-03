@@ -62,7 +62,7 @@
       <!-- Page Title -->
       <div class="top-container">
           <h1 class="form-title">Signup</h1>
-          <form id="#signin-form">
+          <form id="#signin-form" action="/signup" method="POST">
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -81,7 +81,7 @@
               <br>
               <small id="goToSignup" class="form-text text-muted">Already have an account? <a href="signin.html">Signin!</a></small>
             </div>
-            <button onclick="resolveSignup()" type="reset" class="btn btn-primary">Submit</button>
+            <button onclick="resolveSignup()" type="submit" class="btn btn-primary">Submit</button>
           </form>
       </div>
 

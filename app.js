@@ -147,6 +147,8 @@ app.get("/support", function(req, res) {
                 ////////// POST functions \\\\\\\\\\\
 /////////////////////////////////////////////////////////////////////////////////////////
 
+
+
 app.post("/signup", function(req, res){
 
   User.register({username: req.body.username}, req.body.password, function(err, user){
@@ -155,7 +157,7 @@ app.post("/signup", function(req, res){
       res.redirect("/signup");
     } else {
       passport.authenticate("local")(req, res, function(){
-        res.redirect("/secrets");
+        res.redirect("/signup");
       });
     }
   });
