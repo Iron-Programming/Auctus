@@ -87,22 +87,59 @@ app.get("/marketplace", function(req, res) { // CSS not loading
   res.sendFile(__dirname + "/marketplace.html");
 });
 
-app.get("/yourprofile", function(req, res) {
-  res.sendFile(__dirname + "/yourprofile.html");
+app.get("/marketingpackages", function(req, res) {
+  res.sendFile(__dirname + "/marketingpackages.html");
 });
+
+app.get("/notifications", function(req, res) {
+  res.sendFile(__dirname + "/notifications.html");
+});
+
+app.get("/packagecreator", function(req, res) {
+  res.sendFile(__dirname + "/packagecreator.html");
+});
+
+app.get("/profile", function(req, res){
+  if (req.isAuthenticated()){
+    res.sendFile(__dirname + "/profile.html");
+    //res.redirect("/secrets");
+  } else {
+    res.sendFile(__dirname + "/signup.html");
+  //res.redirect("/signin");
+};
 
 app.get("/dashboard", function(req, res) {
   res.sendFile(__dirname + "/dashboard.html");
 });
 
-app.get("/secrets", function(req, res){
-  if (req.isAuthenticated()){
-    res.sendFile(__dirname + "/secrets.html");
-    //res.redirect("/secrets");
-  } else {
-    res.sendFile(__dirname + "/signin.html");
-  //res.redirect("/signin");
-  }
+app.get("/community", function(req, res) {
+  res.sendFile(__dirname + "/community.html");
+});
+
+app.get("/designer", function(req, res) {
+  res.sendFile(__dirname + "/designer.html");
+});
+
+app.get("/designs", function(req, res) {
+  res.sendFile(__dirname + "/designs.html");
+});
+
+app.get("/settings", function(req, res) {
+  res.sendFile(__dirname + "/settings.html");
+});
+
+app.get("/support", function(req, res) {
+  res.sendFile(__dirname + "/support.html");
+});
+
+// app.get("/secrets", function(req, res){
+//   if (req.isAuthenticated()){
+//     res.sendFile(__dirname + "/secrets.html");
+//     //res.redirect("/secrets");
+//   } else {
+//     res.sendFile(__dirname + "/signin.html");
+//   //res.redirect("/signin");
+//   }
 
 });
 
@@ -138,7 +175,7 @@ app.post("/signin", function(req, res){
       console.log(err);
     } else {
       passport.authenticate("local")(req, res, function(){
-        res.redirect("/secrets");
+        res.redirect("/profile");
       });
     }
   });
