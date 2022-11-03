@@ -1,92 +1,160 @@
-const express = require("express");         // Required to run express
-const app = express();                      // Creating express object
+require("dotenv").config();
+const express = require("express"); // Required to run express
+const app = express(); // Creating express object
 const request = require("request");
-const bodyParser = require("body-parser");  // For parsing JSON data
-const https = require("https");             // For making https requests
-const mongoose = require("mongoose");       // Setting up Mongoose DB
+const bodyParser = require("body-parser"); // For parsing JSON data
+const https = require("https"); // For making https requests
+const mongoose = require("mongoose"); // Setting up Mongoose DB
+const session = require('express-session');
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
 
-app.use(express.static("public"));          // Public folder that hold all of our static resources.  The server pulls from this.
+
+app.use(express.static("public")); // Public folder that hold all of our static resources.  The server pulls from this.
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+app.use(session({
+  secret: "The little secret.",
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());     // Create Passport Session
 
 /////////////////////////////////////////////////////////////////////////////////////////
-
-//app.use("/", require("./routes.index"));
-
-const router = express.Router();
-//
-// router.get("/termsofuse", function(req, res){
-//   res.send("Terms of use page");
-// });
-/////////////////////////////////////////////////////////////////////////////////////////
-                    ////// Database Setup(Mongoose) \\\\\\
+////// Database Setup(Mongoose) \\\\\\
 /////////////////////////////////////////////////////////////////////////////////////////
 
-mongoose.connect("mongodb://localhost:27017/todolistDB", {useNewUrlParser: true});        // Connecting the database(localhost for now)
-
-// const auctusSchema = {               // Creating the Schema
-//   name: String
-// };
-//
-// const Item = mongoose.model("Item", itemsSchema);     // Creating the model
-//
-// const item1 = new Item ({                             // Creating documents
-//   name: "Bob"
-// });
-//
-//
-// const defaultItems = [item1, item2, item3];
-//
-// Item.insertMany(defaultItems, function(err){
-//   if (err){
-//     console.log(err);
-//   } else {
-//     console.log("Successfully added documents to database!");
-//   }
+// mongoose.connect("mongodb+srv://admin-oren:Hoolibah88@cluster0.9ryp70x.mongodb.net/?retryWrites=true&w=majority", {      // Connecting the database mongoose
+//   useNewUrlParser: true
 // });
 
+mongoose.connect("mongodb://localhost:27017/AuctusLoginDB", {useNewUrlParser: true});    // Making connection with Mongo and creating the database
+
+const userSchema = new mongoose.Schema ({ // Creating the Schema(collection or table)
+  email: String,
+  password: String
+});
+
+userSchema.plugin(passportLocalMongoose);   // Enable passport plugin for encrypting Database
+
+// userSchema.plugin(encrypt, {secret: process.env.SECRET, encryptedFields: ["password"] });
+
+
+const User = new mongoose.model("User", userSchema); // Creating new schema for database
+
+passport.use(User.createStrategy());
+
+passport.serializeUser(User.serializeUser());       // Serialize and deserialize session cookies
+passport.deserializeUser(User.deserializeUser());
 
 /////////////////////////////////////////////////////////////////////////////////////////
+              ///////// GET requests \\\\\\\\\\\
+/////////////////////////////////////////////////////////////////////////////////////////
 
-app.get("/", function(req, res){            // get function that takes you to the home page
+app.get("/", function(req, res) { // get function that takes you to the home page
   res.sendFile(__dirname + "/index.html");
 });
 
-app.get("/signin", function(req, res){
+app.get("/signin", function(req, res) {
   res.sendFile(__dirname + "/signin.html");
   // res.send("signin");
 });
 
-app.get("/signup", function(req, res){
+app.get("/signup", function(req, res) {
   res.sendFile(__dirname + "/signup.html");
 });
 
-app.get("/termsofuse", function(req, res){
+app.get("/termsofuse", function(req, res) {
   res.sendFile(__dirname + "/termsofuse.html");
 });
 
-app.get("/privacypolicy", function(req, res){
+app.get("/privacypolicy", function(req, res) {
   res.sendFile(__dirname + "/privacypolicy.html");
 });
 
-app.get("/about", function(req, res){                 // CSS not loading
-  res.sendFile(__dirname + "/about.html");
+app.get("/documentation", function(req, res) {
+  res.sendFile(__dirname + "/documentation.html");
+  //res.render("/documentation");
 });
 
-app.get("/account", function(req, res){
+app.get("/account", function(req, res) {
   res.sendFile(__dirname + "/account.html");
 });
 
-app.get("/marketplace", function(req, res){           // CSS not loading
+app.get("/marketplace", function(req, res) { // CSS not loading
   res.sendFile(__dirname + "/marketplace.html");
 });
 
-app.get("/yourprofile", function(req, res){
+app.get("/yourprofile", function(req, res) {
   res.sendFile(__dirname + "/yourprofile.html");
 });
 
-/////////////////////////////////////////////////////////////////////////////////////////
+app.get("/dashboard", function(req, res) {
+  res.sendFile(__dirname + "/dashboard.html");
+});
+
+app.get("/secrets", function(req, res){
+  if (req.isAuthenticated()){
+    res.sendFile(__dirname + "/secrets.html");
+    //res.redirect("/secrets");
+  } else {
+    res.sendFile(__dirname + "/signin.html");
+  //res.redirect("/signin");
+  }
+
+});
 
 /////////////////////////////////////////////////////////////////////////////////////////
+                ////////// POST functions \\\\\\\\\\\
+/////////////////////////////////////////////////////////////////////////////////////////
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("The server is up and running on localhost:3000 and is also set up for heroku");      // Server function
+app.post("/signup", function(req, res){
+
+  User.register({username: req.body.username}, req.body.password, function(err, user){
+    if (err) {
+      console.log(err);
+      res.redirect("/signup");
+    } else {
+      passport.authenticate("local")(req, res, function(){
+        res.redirect("/secrets");
+      });
+    }
+  });
+
+});
+
+
+
+app.post("/signin", function(req, res){
+
+  const user = new User({
+  username: req.body.username,
+  password: req.body.password
+});
+  req.login(user, function(err){
+    if (err){
+      console.log(err);
+    } else {
+      passport.authenticate("local")(req, res, function(){
+        res.redirect("/secrets");
+      });
+    }
+  });
+
+});
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+              ///////// Server code \\\\\\\\\\
+/////////////////////////////////////////////////////////////////////////////////////////
+
+app.listen(process.env.PORT || 3333, function() {
+  console.log("The server is up and running on localhost:3333 and is also set up for heroku"); // Server function
 });
