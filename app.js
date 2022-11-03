@@ -31,8 +31,8 @@ app.use(passport.session());     // Create Passport Session
 // mongoose.connect("mongodb+srv://admin-oren:Hoolibah88@cluster0.9ryp70x.mongodb.net/?retryWrites=true&w=majority", {      // Connecting the database mongoose
 //   useNewUrlParser: true
 // });
-
-mongoose.connect("mongodb://localhost:27017/AuctusLoginDB", {useNewUrlParser: true});    // Making connection with Mongo and creating the database
+mongoose.connect("mongodb+srv://admin-oren:Auctus2022@cluster0.9ryp70x.mongodb.net/?retryWrites=true&w=majority", {useNewUrlParser: true});
+//mongoose.connect("mongodb://localhost:27017/AuctusLoginDB", {useNewUrlParser: true});    // Making connection with Mongo and creating the database
 
 const userSchema = new mongoose.Schema ({ // Creating the Schema(collection or table)
   email: String,
