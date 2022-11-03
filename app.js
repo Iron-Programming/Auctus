@@ -28,11 +28,9 @@ app.use(passport.session());     // Create Passport Session
 ////// Database Setup(Mongoose) \\\\\\
 /////////////////////////////////////////////////////////////////////////////////////////
 
-// mongoose.connect("mongodb+srv://admin-oren:Hoolibah88@cluster0.9ryp70x.mongodb.net/?retryWrites=true&w=majority", {      // Connecting the database mongoose
-//   useNewUrlParser: true
-// });
+//mongoose.createConnection("mongodb://localhost:27017/AuctusLoginDB", {useNewUrlParser: true});    // Making connection with Mongo and creating the database
 
-mongoose.connect("mongodb://localhost:27017/AuctusLoginDB", {useNewUrlParser: true});    // Making connection with Mongo and creating the database
+mongoose.connect("mongodb+srv://admin-oren:Auctus2022@cluster0.9ryp70x.mongodb.net/?retryWrites=true&w=majority",{useNewUrlParser: true});
 
 const userSchema = new mongoose.Schema ({ // Creating the Schema(collection or table)
   email: String,
@@ -155,6 +153,6 @@ app.post("/signin", function(req, res){
               ///////// Server code \\\\\\\\\\
 /////////////////////////////////////////////////////////////////////////////////////////
 
-app.listen(process.env.PORT || 3333, function() {
-  console.log("The server is up and running on localhost:3333 and is also set up for heroku"); // Server function
+app.listen(process.env.PORT || 3000, function() {
+  console.log("The server is up and running on localhost:3000 and is also set up for heroku"); // Server function
 });
