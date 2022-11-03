@@ -5,9 +5,6 @@ const request = require("request");
 const bodyParser = require("body-parser"); // For parsing JSON data
 const https = require("https"); // For making https requests
 const mongoose = require("mongoose"); // Setting up Mongoose DB
-// const md5 = require("md5");  // Setting up md5 encryption
-// const bcrypt = require("bcrypt");  // Setting up bcrypt for salting and hashing passwords
-// const saltRounds = 10;
 const session = require('express-session');
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
@@ -79,7 +76,7 @@ app.get("/privacypolicy", function(req, res) {
   res.sendFile(__dirname + "/privacypolicy.html");
 });
 
-app.get("/documentation", function(req, res) { // CSS not loading
+app.get("/documentation", function(req, res) {
   res.sendFile(__dirname + "/documentation.html");
   //res.render("/documentation");
 });
@@ -114,45 +111,6 @@ app.get("/secrets", function(req, res){
 /////////////////////////////////////////////////////////////////////////////////////////
                 ////////// POST functions \\\\\\\\\\\
 /////////////////////////////////////////////////////////////////////////////////////////
-
-// app.post("/signup", function(req, res){
-//
-//   bcrypt.hash(req.body.password, saltRounds, function(err, hash){
-//     const newUser = new User({
-//       email: req.body.email,
-//       password: hash
-//     });
-//
-//     newUser.save(function(err){
-//       if (err){
-//         console.log(err);
-//       } else {
-//         res.sendFile(__dirname + "/secrets.html");
-//       }
-//     });
-//   });
-// });
-//
-// app.post("/signin", function(req, res){
-//   const email = req.body.email;
-//   const password = req.body.password;
-//
-//   User.findOne({email:email}, function(err, foundUser){
-//     if (err){
-//       console.log(err);
-//     } else {
-//       if (foundUser) {
-//         bcrypt.compare(password, foundUser.password, function(err, result){
-//           if (result === true){
-//               res.sendFile(__dirname + "/secrets.html");
-//           }
-//         });
-//       }
-//     }
-//   });
-// });
-
-
 
 app.post("/signup", function(req, res){
 
@@ -198,5 +156,5 @@ app.post("/signin", function(req, res){
 /////////////////////////////////////////////////////////////////////////////////////////
 
 app.listen(process.env.PORT || 3333, function() {
-  console.log("The server is up and running on localhost:3000 and is also set up for heroku"); // Server function
+  console.log("The server is up and running on localhost:3333 and is also set up for heroku"); // Server function
 });
