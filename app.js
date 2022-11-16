@@ -132,15 +132,6 @@ app.get("/support", function(req, res) {
   res.sendFile(__dirname + "/support.html");
 });
 
-// app.get("/secrets", function(req, res){
-//   if (req.isAuthenticated()){
-//     res.sendFile(__dirname + "/secrets.html");
-//     //res.redirect("/secrets");
-//   } else {
-//     res.sendFile(__dirname + "/signin.html");
-//   //res.redirect("/signin");
-//   }
-
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -151,13 +142,13 @@ app.get("/support", function(req, res) {
 
 app.post("/signup", function(req, res){
 
-  User.register({username: req.body.username}, req.body.password, function(err, user){
+  User.register({username: req.body.username}, req.body.password, function(err, user){     // Here we request the username and password from the signup page and register the information in the DB
     if (err) {
       console.log(err);
-      res.redirect("/signup");
+      res.redirect("/");          // This would normally redirect to an error page if there was an error with registration
     } else {
       passport.authenticate("local")(req, res, function(){
-        res.redirect("/signup");
+        res.redirect("/signup");        // When signup is completed we are redirected to the /signup page
       });
     }
   });
@@ -168,16 +159,16 @@ app.post("/signup", function(req, res){
 
 app.post("/signin", function(req, res){
 
-  const user = new User({
+  const user = new User({        // JavaScript collection for the username and password.  We again request information from the signin page
   username: req.body.username,
   password: req.body.password
 });
-  req.login(user, function(err){
+  req.login(user, function(err){  // Here we request for a login, this will cause the passport package to authenticate the username and password with the entry in the DB
     if (err){
       console.log(err);
     } else {
       passport.authenticate("local")(req, res, function(){
-        res.redirect("/profile");
+        res.redirect("/profile");                 // Redirected to the user's profile page when signin is successfull
       });
     }
   });
